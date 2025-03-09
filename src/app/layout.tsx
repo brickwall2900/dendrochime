@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
-import NavigationShit, { SidebarNavigation } from "@/components/navbar/Navigation";
+import NavigationShit, { SidebarNavigation } from "@/components/navbar/nav-main";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const interMono = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
 });
 
@@ -15,7 +26,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "DendroChime",
-  description: "carbon stock go boom brrrrr",
+  description: "carbon stock monitoring go boom brrrrr",
 };
 
 export default function RootLayout({
@@ -24,13 +35,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${interMono.variable} antialiased`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body>
+        <Toaster />
         <div>
           <NavigationShit />
         </div>
-        <div className="mt-12">
-          <SidebarNavigation>{children}</SidebarNavigation>
+        <div className="flex flex-col min-h-svh">
+          <div className="h-12"></div>
+          <div className="flex-1">
+            <SidebarNavigation>{children}</SidebarNavigation>
+          </div>
+          <div>
+            The footer goes here!
+          </div>
         </div>
       </body>
     </html>

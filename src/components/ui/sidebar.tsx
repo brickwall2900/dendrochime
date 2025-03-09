@@ -30,7 +30,7 @@ const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
-const SIDEBAR_KEYBOARD_SHORTCUT = "b"
+const SIDEBAR_KEYBOARD_SHORTCUT = "V"
 
 type SidebarContext = {
   state: "expanded" | "collapsed"
@@ -97,7 +97,7 @@ function SidebarProvider({
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
-        event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
+        (event.key === SIDEBAR_KEYBOARD_SHORTCUT || event.key === SIDEBAR_KEYBOARD_SHORTCUT.toLowerCase()) &&
         (event.metaKey || event.ctrlKey)
       ) {
         event.preventDefault()
@@ -139,7 +139,7 @@ function SidebarProvider({
             } as React.CSSProperties
           }
           className={cn(
-            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full",
+            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex w-full",
             className
           )}
           {...props}
@@ -227,7 +227,7 @@ function Sidebar({
       />
       <div
         className={cn(
-          "fixed inset-y-0 z-10 mt-12 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-300 ease-out md:flex",
+          "fixed z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-300 ease-out md:flex",
           side === "left"
             ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
             : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",

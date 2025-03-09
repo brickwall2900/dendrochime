@@ -21,7 +21,7 @@ function SidebarShit() {
     }
 
     return (
-        <Sidebar>
+        <Sidebar side="right">
             <SidebarContent>
                 <SidebarGroup>
                     <SidebarGroupLabel>AAAA</SidebarGroupLabel>
@@ -50,7 +50,7 @@ export function SidebarNavigation({ children }: Readonly<{
   }>) {
     return <>
         <SidebarProvider>
-            <main>
+            <main className="w-full h-full">
                 {children}
             </main>
             <SidebarShit></SidebarShit>
@@ -65,7 +65,7 @@ function Navigation({ name }: { name: string }) {
             <nav>
                 {
                     links.map((x) => {
-                        return <Link className="text-white" href={x.href}>{x.name}</Link>
+                        return <Link key={x.name} className="text-white p-4 transition duration-100 hover:underline hover:bg-green-500" href={x.href}>{x.name}</Link>
                     })
                 }
             </nav>
