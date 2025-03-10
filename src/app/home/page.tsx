@@ -1,4 +1,4 @@
-import GodDamnButtons from "@/components/auth/auth-buttons";
+import AuthButtons from "@/components/auth/auth-buttons";
 
 function TitlePage() {
     return (
@@ -6,7 +6,7 @@ function TitlePage() {
             <h1 className="justify-between text-4xl text-center">Dendrochime</h1>
             <p>Ding in a Greener Tomorrow</p>
             <p>One record at a time</p>
-            <GodDamnButtons />
+            <AuthButtons />
         </div>
     );
 }

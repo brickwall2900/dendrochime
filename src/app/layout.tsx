@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
-import NavigationShit, { SidebarNavigation } from "@/components/navbar/nav-main";
+import NavigationMain, { SidebarNavigation } from "@/components/navbar/nav-main";
 import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
@@ -42,7 +42,7 @@ export default function RootLayout({
       <body>
         <Toaster />
         <div>
-          <NavigationShit />
+          <NavigationMain />
         </div>
         <div className="flex flex-col min-h-svh">
           <div className="h-12"></div>

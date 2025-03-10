@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-export default function GodDamnButtons() {
+export default function AuthButtons() {
     const router = useRouter();
 
     return (

@@ -7,13 +7,13 @@ import { MenuIcon } from "lucide-react"
 import { useState } from "react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarRail, SidebarTrigger, useSidebar } from "../ui/sidebar";
 
-export default function NavigationShit() {
+export default function NavigationMain() {
     return <>
         <Navigation name="asaaaaaa" />
     </>;
 }
 
-function SidebarShit() {
+function SidebarMain() {
     const sidebar = useSidebar();
 
     function itemSidebarClose() {
@@ -30,7 +30,7 @@ function SidebarShit() {
                             <SidebarMenuItem key="AAAA">
                                 <SidebarMenuButton>
                                     <span>
-                                        shit
+                                        Stuff??
                                     </span>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -53,7 +53,7 @@ export function SidebarNavigation({ children }: Readonly<{
             <main className="w-full h-full">
                 {children}
             </main>
-            <SidebarShit></SidebarShit>
+            <SidebarMain></SidebarMain>
         </SidebarProvider>
     </>;
 }

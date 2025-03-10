@@ -21,6 +21,7 @@ export default function SignUpBox() {
                     <CardDescription>Create your account here!</CardDescription>
                 </CardHeader>
                 <CardContent>
+                    { /* The Sign Up form is a bit complicated... */ }
                     <SignUpForm />
                 </CardContent>
                 <CardFooter className="flex flex-col">
