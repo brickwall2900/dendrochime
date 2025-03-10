@@ -9,7 +9,7 @@ export default function GodDamnButtons() {
     return (
         <div className="flex m-4 gap-2">
             <Button onClick={() => router.push("/login")}>Log In</Button>
-            <Button>Sign Up</Button>
+            <Button onClick={() => router.push("/signup")}>Sign Up</Button>
         </div>
     );
 }

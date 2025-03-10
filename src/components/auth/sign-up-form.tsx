@@ -43,7 +43,10 @@ export default function SignUpForm() {
 
   const form = useForm < z.infer < typeof formSchema >> ({
     resolver: zodResolver(formSchema),
-
+    defaultValues: {
+      username: "",
+      password: ""
+    }
   })
 
   function onSubmit(values: z.infer < typeof formSchema > ) {
@@ -60,9 +63,9 @@ export default function SignUpForm() {
     }
   }
 
-  return (
+  return (<div className="flex flex-col gap-4">
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-3xl mx-auto">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-3xl">
         
         <FormField
           control={form.control}
@@ -95,9 +98,9 @@ export default function SignUpForm() {
         />
         
         <Button className="w-full" type="submit">Submit</Button>
-        <Button variant="outline" className="w-full">Login with Google</Button>
-        <Button variant="outline" className="w-full">Login with other shit</Button>
       </form>
     </Form>
-  )
+    <Button variant="outline" className="w-full">Login with Google</Button>
+    <Button variant="outline" className="w-full">Login with other shit</Button>
+  </div>);
 }
