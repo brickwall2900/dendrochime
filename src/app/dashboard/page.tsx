@@ -24,7 +24,7 @@ export default function Page() {
                 <p>gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt </p>
                 <p>gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt </p>
             </Section>
-            <Section title="Newsroom">
+            <Section title="Newsroom" href="/news">
             </Section>
             <Section title="Your Communities" href="/communities">
             </Section>

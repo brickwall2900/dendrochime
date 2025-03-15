@@ -6,10 +6,11 @@ export default function Page() {
         <div className="m-8 flex flex-col gap-4">
             <div className="flex flex-col md:flex-row md:justify-between justify-start">
                 <h1 className="text-3xl">Newsroom</h1>
-                { /* vvvvvvvv TODO: make client component vvvvvvvv */ }
                 <CreatePostButton />
             </div>
-            <p>This is the newsroom :pp</p>
+            <p>This is the newsroom :pp TIME TO MAKE SOME NEWS!!</p>
+
+            
         </div>
     );
 }
