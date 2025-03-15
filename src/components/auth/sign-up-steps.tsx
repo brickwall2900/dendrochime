@@ -70,13 +70,11 @@ export function FormUploadBox({ files, onFilesChanged }: { files: File[] | null,
     );
 }
 
-function CitizenSignForm() {
-    return (
-        <div>
-            
-        </div>
-    );
-}
+// TODO: replace by JSON??
+const description = new Map();
+description.set("citizen", "You are a citizen. You are able to do stuff");
+description.set("expert", "You are an expert. You are able to do more stuff");
+description.set("institution", "You are an institution. You are also able to do more stuff");
 
 export type UserType = "citizen" | "expert" | "institution";
 
@@ -94,7 +92,7 @@ export default function SignUpSomething() {
 
             {/* Right side - Explanatory text */}
             <div className="p-2 border-l border-gray-200">
-                <p className="text-center">something like this, here it tells the user whatever</p>
+                <p className="text-center">{description.get(userType)}</p>
             </div>
         </div>
       )

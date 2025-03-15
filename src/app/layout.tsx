@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import NavigationMain, { SidebarNavigation } from "@/components/navbar/nav-main";
 import { Toaster } from "@/components/ui/sonner";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { AlertTriangle, MessageSquareWarning } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +53,13 @@ export default function RootLayout({
           </div>
           <div>
             The footer goes here!
+            <Alert>
+              <AlertTriangle className="h-4 w-4" />
+              <AlertTitle>DendroChime</AlertTitle>
+              <AlertDescription>
+                Website is not currently representative in its current state! Anything may be subject to change!
+              </AlertDescription>
+            </Alert>
           </div>
         </div>
       </body>

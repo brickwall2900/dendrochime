@@ -130,7 +130,7 @@ export default function SignUpForm({ userType, files, onFilesChanged }: { userTy
             )}
             />
             
-            {!isCitizen && <Link href="/expert_form.pdf" className="text-blue-500">Download Form</Link>}
+            {!isCitizen && <Link href="/expert_form.pdf" target="_blank" className="text-blue-500">Download Form</Link>}
             {!isCitizen &&  <FormField
                     control={form.control}
                     name="file_upload"

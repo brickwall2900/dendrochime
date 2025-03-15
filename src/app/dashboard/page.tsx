@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-function Section({ title, titleLink, children }: { title: string, titleLink?: string, children: React.ReactNode }) {
+function Section({ title, href, children }: { title: string, href?: string, children?: React.ReactNode }) {
     return (
         <div>
-            <Link className="text-xl bg-green-400 w-full p-2 pl-4 inline-block" href={titleLink || "#"}>{title}</Link>
+            <Link className="text-xl bg-green-400 w-full p-2 pl-4 inline-block" href={href || "#"}>{title}</Link>
             <div className="bg-green-600 w-full p-4">
                 {children}
             </div>
@@ -23,6 +23,12 @@ export default function Page() {
                 <p>gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt </p>
                 <p>gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt </p>
                 <p>gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt </p>
+            </Section>
+            <Section title="Newsroom">
+            </Section>
+            <Section title="Your Communities" href="/communities">
+            </Section>
+            <Section title="Educational Videos">
             </Section>
         </div>
     );

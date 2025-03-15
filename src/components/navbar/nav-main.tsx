@@ -1,48 +1,52 @@
 "use client";
 
-import links from "@/data/navigation_data"
+import { links, sidebar_links } from "@/data/navigation_data"
 import Link from "next/link"
 import { Button } from "../ui/button"
-import { MenuIcon } from "lucide-react"
+import { MenuIcon, MenuSquareIcon } from "lucide-react"
 import { useState } from "react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarRail, SidebarTrigger, useSidebar } from "../ui/sidebar";
+import { useRouter } from "next/navigation";
 
 export default function NavigationMain() {
     return <>
-        <Navigation name="asaaaaaa" />
+        <Navigation name="DendroChime" />
     </>;
 }
 
 function SidebarMain() {
     const sidebar = useSidebar();
+    const router = useRouter();
 
     function itemSidebarClose() {
         sidebar.toggleSidebar();
     }
 
-    return (
-        <Sidebar side="right">
+    function itemSidebarChosenFactory(href: string) {
+        return () => {
+            router.push(href);
+        };
+    }
+
+    return <>
+        <SidebarTrigger>
+            <MenuSquareIcon></MenuSquareIcon>
+        </SidebarTrigger>
+        <Sidebar side="right" collapsible="icon">
             <SidebarContent>
-                <SidebarGroup>
-                    <SidebarGroupLabel>AAAA</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            <SidebarMenuItem key="AAAA">
-                                <SidebarMenuButton>
-                                    <span>
-                                        Stuff??
-                                    </span>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-                <SidebarMenuButton onClick={itemSidebarClose}>CLOSE</SidebarMenuButton>
+                {sidebar_links.map((x) => {
+                    return (
+                        <SidebarMenuButton className="py-8" key={x.name} onClick={itemSidebarChosenFactory(x.href)}>
+                            {x.name}
+                        </SidebarMenuButton>
+                    );
+                })}
+                <SidebarMenuButton className="py-8" onClick={itemSidebarClose}>CLOSE</SidebarMenuButton>
             </SidebarContent>
             <SidebarFooter />
             <SidebarRail />
         </Sidebar>
-    );
+    </>;
 }
 
 export function SidebarNavigation({ children }: Readonly<{

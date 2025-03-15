@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "id": "0",
+            "name": "Kevin",
+            "type": "admin",
+            "communities": []
+        },
+        { 
+            "id": "1",
+            "name": "Alice",
+            "type": "citizen",
+            "communities": [1, 2]
+        },
+        { 
+            "id": "2",
+            "name": "Bob",
+            "type": "citizen",
+            "communities": [1, 2]
+        }
+    ],
+
+    "news": [
+        {
+            "id": "1",
+            "title": "Something about trees",
+            "content": "Aaaaaa"
+        }
+    ],
+
+    "communities": [
+        {
+            "id": "1",
+            "title": "Community 1",
+            "members": [1, 2]
+        },
+        {
+            "id": "2",
+            "title": "Community 2",
+            "members": [1, 2]
+        }
+    ]
+}
