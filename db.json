@@ -72,14 +72,16 @@
 
     "educational_videos": [
         {
+            "id": 1,
             "title": "Video Example Title",
             "description": "Description here",
-            "link": "https://www.youtube.com/watch?v=9MUDAr1PnlE"
+            "videoId": "9MUDAr1PnlE"
         },
         {
+            "id": 2,
             "title": "linga guli guli",
             "description": "a",
-            "link": "https://www.youtube.com/watch?v=ZbWIs6z3Thw"
+            "videoId": "ZbWIs6z3Thw"
         }
     ]
 }

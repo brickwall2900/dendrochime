@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LatestNews from "./latest-news";
-import { Group, NewspaperIcon } from "lucide-react";
+import { Group, NewspaperIcon, Video } from "lucide-react";
 import TopCommunity from "./top-community";
 
 function Thingy({ title, href, icon, children }: { title: string, href?: string, icon?: React.ReactNode, children?: React.ReactNode }) {
@@ -26,7 +26,7 @@ export default function Page() {
             <Thingy title="Your Communities" href="/communities" icon={<Group />}>
                 <TopCommunity />
             </Thingy>
-            <Thingy title="Educational Videos">
+            <Thingy title="Educational Videos" href="/educational" icon={<Video />}>
             </Thingy>
         </div>
     );

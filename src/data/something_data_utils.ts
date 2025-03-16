@@ -31,6 +31,13 @@ export type News = {
     dateModified: Date
 }
 
+export type EducationalVideo = {
+    id: IdType,
+    title: string,
+    description: string,
+    videoId: string
+}
+
 export type ServerResponse<T> = {
     status: string,
     statusCode: number,
@@ -42,6 +49,7 @@ const SERVER_USERS = "http://localhost:3001/users"
 const SERVER_COMMUNITIES = "http://localhost:3001/communities"
 const SERVER_COMMUNITY_MEMBERS = "http://localhost:3001/community_members"
 const SERVER_NEWS = "http://localhost:3001/news"
+const SERVER_EDUCATIONAL_VIDEOS = "http://localhost:3001/educational_videos"
 
 function parseData<T>(data: T): T {
     if (Array.isArray(data)) {
@@ -127,6 +135,16 @@ export async function getUsers(id: IdType[]): Promise<ServerResponse<User[]>> {
     const thing = id.map((x) => (`id=${x}`));
     const url = new NextURL(SERVER_COMMUNITIES + `?${thing.join("&")}`);
     return getSomething<User[]>(url);
+}
+
+export async function getEducationalVideo(id: IdType): Promise<ServerResponse<EducationalVideo>> {    
+    const url = new NextURL(SERVER_EDUCATIONAL_VIDEOS + "/" + encodeURIComponent(id));
+    return getSomething<EducationalVideo>(url);
+}
+
+export async function getEducationalVideoList(page?: number, limit?: number): Promise<ServerResponse<EducationalVideo[]>> {
+    const url = new NextURL(SERVER_EDUCATIONAL_VIDEOS + `?_page=${page || DEFAULT_PAGE}&_limit=${limit || DEFAULT_LIMIT}`);
+    return getSomething<EducationalVideo[]>(url);
 }
 
 export function isSuccess<T>(x: ServerResponse<T>): boolean {

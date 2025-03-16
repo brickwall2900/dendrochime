@@ -2,7 +2,7 @@
 
 import { links, sidebar_links } from "@/data/navigation_data"
 import Link from "next/link"
-import { MenuIcon, MenuSquareIcon } from "lucide-react"
+import { MenuIcon, MenuSquareIcon, XIcon } from "lucide-react"
 import { useState } from "react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarRail, SidebarTrigger, useSidebar } from "../ui/sidebar";
 import { useRouter } from "next/navigation";
@@ -27,11 +27,11 @@ function SidebarMain() {
                 {sidebar_links.map((x) => {
                     return (
                         <SidebarMenuButton className="py-8" key={x.name} onClick={itemSidebarChosenFactory(x.href)}>
-                            {x.name}
+                            {x.icon} {x.name}
                         </SidebarMenuButton>
                     );
                 })}
-                <SidebarMenuButton className="py-8" onClick={itemSidebarClose}>CLOSE</SidebarMenuButton>
+                <SidebarMenuButton className="py-8" onClick={itemSidebarClose}><XIcon /> CLOSE</SidebarMenuButton>
             </SidebarContent>
             <SidebarFooter />
             <SidebarRail />
