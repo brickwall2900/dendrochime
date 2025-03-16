@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import CreatePostButton from "./CreatePostButton";
+import CreatePostButton from "./create-post-button";
 import { getLatestNews, isSuccess, News } from "@/data/something_data_utils";
 import Link from "next/link";
 
@@ -22,7 +22,7 @@ export default async function Page() {
     const response = await getLatestNews();
 
     return (
-        <div className="m-8 flex flex-col gap-4">
+        <article className="m-8 flex flex-col gap-4">
             <div className="flex flex-col md:flex-row md:justify-between justify-start">
                 <h1 className="text-3xl">Newsroom</h1>
                 <CreatePostButton />
@@ -33,7 +33,6 @@ export default async function Page() {
                     response.response?.map(x => <NewsPiece news={x} key={x.title}></NewsPiece>)
                     : <li>Error fetching lastest news! {response.status}</li>}
             </ul>
-
-        </div>
+        </article>
     );
 }

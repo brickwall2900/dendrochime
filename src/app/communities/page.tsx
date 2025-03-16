@@ -22,7 +22,7 @@ export default async function Page() {
     const response = await getPopularCommunities();
 
     return (
-        <div className="m-8 flex flex-col gap-4">
+        <article className="m-8 flex flex-col gap-4">
             <div className="flex flex-col md:flex-row md:justify-between justify-start">
                 <h1 className="text-3xl">Communities</h1>
             </div>
@@ -32,6 +32,6 @@ export default async function Page() {
                     response.response?.map(x => <CommunityThing community={x} key={x.name}></CommunityThing>)
                     : <li>Error fetching popular communities! {response.status}</li>}
             </ul>
-        </div>
+        </article>
     );
 }

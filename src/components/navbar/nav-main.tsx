@@ -22,7 +22,7 @@ function SidebarMain() {
     }
 
     return <>
-        <Sidebar side="right" variant="floating" collapsible="icon" className="border-l pt-12 z-30 ">
+        <Sidebar side="right" variant="floating" collapsible="icon" className="border-l pt-12 z-1000 ">
             <SidebarContent>
                 {sidebar_links.map((x) => {
                     return (
@@ -43,13 +43,13 @@ export function MainWithSidebarNav({ children }: Readonly<{
     children: React.ReactNode;
   }>) {
     return <>
-        <SidebarProvider className="overflow-hidden">
+        <SidebarProvider className="overflow-x-hidden">
             <div className="flex min-h-screen min-w-screen flex-col">
                 <Navigation name="DendroChime" />
-                <main className="flex-1 pt-12 pr-16 w-full">
-                    <div className="h-full w-full">
+                <main className="flex-1 pt-12 mb-12 pr-16 w-full">
+                    {/* <div className="h-full w-full"> */}
                         {children}
-                    </div>
+                    {/* </div> */}
                 </main>
             </div>
             <SidebarMain />
@@ -59,7 +59,7 @@ export function MainWithSidebarNav({ children }: Readonly<{
 
 function Navigation({ name }: { name: string }) {
     return <>
-        <header className="fixed flex w-full h-12 top-0 z-69 overflow-hidden bg-green-700 items-center justify-start place-content-center px-4 gap-4">
+        <header className="fixed flex w-full h-12 top-0 z-69420 overflow-hidden bg-green-700 items-center justify-start place-content-center px-4 gap-4">
             <span className="text-white">{name}</span>
             <nav>
                 {

@@ -44,7 +44,7 @@ export default function RootLayout({
       <body>
         <Toaster />
         <MainWithSidebarNav>{children}</MainWithSidebarNav>
-        <div>
+        {/* <div>
           The footer goes here!
           <Alert>
             <AlertTriangle className="h-4 w-4" />
@@ -53,7 +53,7 @@ export default function RootLayout({
               Website is not currently representative in its current state! Anything may be subject to change!
             </AlertDescription>
           </Alert>
-        </div>
+        </div> */}
       </body>
     </html>
   );
