@@ -1,19 +1,19 @@
 {
     "users": [
         {
-            "id": "0",
+            "id": 0,
             "name": "Kevin",
             "type": "admin",
             "communities": []
         },
         { 
-            "id": "1",
+            "id": 1,
             "name": "Alice",
             "type": "citizen",
             "communities": [1, 2]
         },
         { 
-            "id": "2",
+            "id": 2,
             "name": "Bob",
             "type": "citizen",
             "communities": [1, 2]
@@ -22,21 +22,37 @@
 
     "news": [
         {
-            "id": "1",
+            "id": 1,
             "title": "Something about trees",
-            "content": "Aaaaaa"
+            "content": "Aaaaaa",
+            "dateCreated": 1190952000000,
+            "dateModified": 1207627200000
+        },
+        {
+            "id": 2,
+            "title": "Tree planting",
+            "content": "Guys! I think it's time to plant more trees!",
+            "dateCreated": 1742046601000,
+            "dateModified": 1742046606000
+        },
+        {
+            "id": 3,
+            "title": "Long names",
+            "content": "gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt ",
+            "dateCreated": 1842046601000,
+            "dateModified": 1842046606000
         }
     ],
 
     "communities": [
         {
-            "id": "1",
+            "id": 1,
             "name": "Community 1",
             "description": "An example community",
             "memberCount": 2
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "Community 2",
             "description": "An example community",
             "memberCount": 6

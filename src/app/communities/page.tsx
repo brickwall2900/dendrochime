@@ -5,16 +5,16 @@ export const revalidate = 30 * 60;
 
 function CommunityThing( { community }: { community: Community } ) {
     return (
-        <div className="flex flex-col w-full border p-4 border-gray-800 rounded-xl">
+        <li className="flex flex-col w-full border p-4 border-gray-800 rounded-xl">
             <div className="flex flex-row justify-between">
                 <Link className="text-xl hover:underline" href={`/communities/${community.id}`}>{community.name}</Link>
                 <p className="text-sm">{community.memberCount} members</p>
             </div>
 
             <div className="flex flex-row">
-                <p className="text-md">{community.description}</p>
+                <q className="text-md">{community.description}</q>
             </div>
-        </div>
+        </li>
     );
 }
 
@@ -27,11 +27,11 @@ export default async function Page() {
                 <h1 className="text-3xl">Communities</h1>
             </div>
             <p>This is the communities... JOIN ONE!!</p>
-            <div className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4">
                 {isSuccess(response) ? 
                     response.response?.map(x => <CommunityThing community={x} key={x.name}></CommunityThing>)
-                    : <p>Error fetching popular communities! {response.status}</p>}
-            </div>
+                    : <li>Error fetching popular communities! {response.status}</li>}
+            </ul>
         </div>
     );
 }

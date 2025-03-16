@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
-import NavigationMain, { SidebarNavigation } from "@/components/navbar/nav-main";
+import { MainWithSidebarNav } from "@/components/navbar/nav-main";
 import { Toaster } from "@/components/ui/sonner";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertTriangle, MessageSquareWarning } from "lucide-react";
@@ -16,7 +16,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const interMono = Inter_Tight({
+const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
 });
@@ -37,30 +37,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${interMono.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${interTight.variable} antialiased`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
         <Toaster />
+        <MainWithSidebarNav>{children}</MainWithSidebarNav>
         <div>
-          <NavigationMain />
-        </div>
-        <div className="flex flex-col min-h-svh">
-          <div className="h-12"></div>
-          <div className="flex-1">
-            <SidebarNavigation>{children}</SidebarNavigation>
-          </div>
-          <div>
-            The footer goes here!
-            <Alert>
-              <AlertTriangle className="h-4 w-4" />
-              <AlertTitle>DendroChime</AlertTitle>
-              <AlertDescription>
-                Website is not currently representative in its current state! Anything may be subject to change!
-              </AlertDescription>
-            </Alert>
-          </div>
+          The footer goes here!
+          <Alert>
+            <AlertTriangle className="h-4 w-4" />
+            <AlertTitle>DendroChime</AlertTitle>
+            <AlertDescription>
+              Website is not currently representative in its current state! Anything may be subject to change!
+            </AlertDescription>
+          </Alert>
         </div>
       </body>
     </html>
