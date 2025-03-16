@@ -2,10 +2,11 @@ import { Button } from "@/components/ui/button";
 import CreatePostButton from "./create-post-button";
 import { getLatestNews, isSuccess, News } from "@/data/something_data_utils";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-function NewsPiece({ news }: { news: News }) {
+export function NewsPiece({ news, className }: { news: News, className?: string }) {
     return (
-        <li className="flex flex-col border p-4 border-gray-800 rounded-xl max-w-full">
+        <li className={cn("flex flex-col border p-4 border-gray-800 rounded-xl max-w-full", className)}>
             <div className="flex flex-row justify-between">
                 <Link className="text-xl hover:underline" href={`/news/${news.id}`}>{news.title}</Link>
                 <p className="text-sm">Modified <time dateTime={news.dateModified.toISOString()}>{news.dateModified.toLocaleString()}</time></p>

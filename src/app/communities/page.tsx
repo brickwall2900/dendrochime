@@ -1,11 +1,12 @@
 import { Community, getPopularCommunities, isSuccess } from "@/data/something_data_utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export const revalidate = 30 * 60;
 
-function CommunityThing( { community }: { community: Community } ) {
+export function CommunityThing( { community, className }: { community: Community, className?: string } ) {
     return (
-        <li className="flex flex-col w-full border p-4 border-gray-800 rounded-xl">
+        <li className={cn("flex flex-col w-full border p-4 border-gray-800 rounded-xl", className)}>
             <div className="flex flex-row justify-between">
                 <Link className="text-xl hover:underline" href={`/communities/${community.id}`}>{community.name}</Link>
                 <p className="text-sm">{community.memberCount} members</p>

@@ -68,5 +68,18 @@
             "id": "2",
             "members": [1, 2, 3, 4, 5, 6]
         }
+    ],
+
+    "educational_videos": [
+        {
+            "title": "Video Example Title",
+            "description": "Description here",
+            "link": "https://www.youtube.com/watch?v=9MUDAr1PnlE"
+        },
+        {
+            "title": "linga guli guli",
+            "description": "a",
+            "link": "https://www.youtube.com/watch?v=ZbWIs6z3Thw"
+        }
     ]
 }
