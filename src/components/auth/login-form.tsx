@@ -101,6 +101,6 @@ export default function LoginForm() {
       </form>
     </Form>
     <Button variant="outline" className="w-full">Login with Google</Button>
-    <Button variant="outline" className="w-full">Login with other shit</Button>
+    <Button variant="outline" className="w-full">Login with other stuff</Button>
   </div>);
 }

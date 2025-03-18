@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
         pathname: '/blog-ecotree/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        port: '',
+        pathname: '/vi/**',
+        search: '',
+      },
     ],
   },
 };
