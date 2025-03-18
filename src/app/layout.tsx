@@ -27,7 +27,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DendroChime",
+  title: {
+    template: '%s | Dendrochime',
+    default: 'Dendrochime',
+  },
   description: "carbon stock monitoring go boom brrrrr",
 };
 
@@ -48,7 +51,7 @@ export default function RootLayout({
           The footer goes here!
           <Alert>
             <AlertTriangle className="h-4 w-4" />
-            <AlertTitle>DendroChime</AlertTitle>
+            <AlertTitle>Dendrochime</AlertTitle>
             <AlertDescription>
               Website is not currently representative in its current state! Anything may be subject to change!
             </AlertDescription>

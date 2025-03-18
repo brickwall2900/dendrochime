@@ -2,6 +2,11 @@ import Link from "next/link";
 import LatestNews from "./latest-news";
 import { Group, NewspaperIcon, Video } from "lucide-react";
 import TopCommunity from "./top-community";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Dashboard",
+};
 
 function Thingy({ title, href, icon, children }: { title: string, href?: string, icon?: React.ReactNode, children?: React.ReactNode }) {
     return (
@@ -18,7 +23,7 @@ export default function Page() {
     return (
         <div className="m-8 flex flex-col gap-4">
             <h1 className="text-3xl">Dashboard!</h1>
-            <p>Welcome to DendroChime!</p>
+            <p>Welcome to Dendrochime!</p>
 
             <Thingy title="Newsroom" href="/news" icon={<NewspaperIcon />}>
                 <LatestNews />

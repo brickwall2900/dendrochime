@@ -1,8 +1,10 @@
 import { footprint_data, FootprintAction } from "@/data/footprint_data";
+import { Metadata } from "next";
 import Link from "next/link";
 
-// TODO: SMALL C in DendroChime
-//                        ^ RIGHT THERE!!!!!!
+export const metadata: Metadata = {
+    title: "Carbon Footprint Record",
+};
 
 function TrackerItem( { item }: { item: FootprintAction } ) {
     return (

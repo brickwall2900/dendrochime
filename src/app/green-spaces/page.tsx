@@ -5,6 +5,11 @@ import { Input } from '@/components/ui/input';
 import { CheckCheck, PlusCircle } from 'lucide-react';
 import Link from 'next/link';
 import ContributeButton from './contribute-button';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Green Spaces near You",
+};
 
 export default async function Page() {
     return (

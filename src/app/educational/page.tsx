@@ -1,5 +1,10 @@
 import { EducationalVideo, getEducationalVideoList, isSuccess } from "@/data/something_data_utils";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+    title: "Educational Videos",
+};
 
 function VideoItem({ video }: { video: EducationalVideo }) {
     return (

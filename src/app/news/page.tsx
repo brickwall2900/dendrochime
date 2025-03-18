@@ -3,6 +3,11 @@ import CreatePostButton from "./create-post-button";
 import { getLatestNews, isSuccess, News } from "@/data/something_data_utils";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Newsroom",
+};
 
 export function NewsPiece({ news, className }: { news: News, className?: string }) {
     return (

@@ -2,7 +2,7 @@
 
 import { links, sidebar_links } from "@/data/navigation_data"
 import Link from "next/link"
-import { LayoutDashboard, MenuIcon, MenuSquareIcon, MoveLeft, MoveRight, Search, SidebarClose, SidebarOpen, User, XIcon } from "lucide-react"
+import { Bell, LayoutDashboard, MenuIcon, MenuSquareIcon, MoveLeft, MoveRight, Search, SidebarClose, SidebarOpen, User, XIcon } from "lucide-react"
 import { useState } from "react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarRail, SidebarSeparator, SidebarTrigger, useSidebar } from "../ui/sidebar";
 import { useRouter } from "next/navigation";
@@ -73,7 +73,7 @@ export function MainWithSidebarNav({ children }: Readonly<{
     return <>
         <SidebarProvider className="overflow-x-hidden">
             <div className="flex min-h-screen min-w-screen flex-col">
-                <Navigation name="DendroChime" />
+                <Navigation name="Dendrochime" />
                 <main className="flex-1 pt-12 mb-12 md:pr-16 w-full">
                     {/* <div className="h-full w-full"> */}
                         {children}
@@ -100,6 +100,7 @@ function Navigation({ name }: { name: string }) {
             <span className="ml-auto" />
             <Search color="#FFFFFF" />
             <Input className="bg-white w-64" type="text" placeholder="Search..." />
+            <Button><Bell /></Button>
             <UserAccountButton />
             {isMobile && <SidebarTrigger><Sidebar /></SidebarTrigger>}
         </header>

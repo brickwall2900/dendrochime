@@ -1,8 +1,13 @@
 import { Community, getPopularCommunities, isSuccess } from "@/data/something_data_utils";
 import { cn } from "@/lib/utils";
+import { Metadata } from "next";
 import Link from "next/link";
 
 export const revalidate = 30 * 60;
+
+export const metadata: Metadata = {
+    title: "Communities",
+};
 
 export function CommunityThing( { community, className }: { community: Community, className?: string } ) {
     return (
