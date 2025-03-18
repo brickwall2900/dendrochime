@@ -13,9 +13,8 @@ import "leaflet/dist/leaflet.css";
 // import "leaflet-defaulticon-compatibility";
 // yehey
 
-import L from 'leaflet';
+import L, { LatLngTuple } from 'leaflet';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { LatLngTuple } from "leaflet";
 
 const icon = L.icon({ 
     iconUrl: '/images/marker-icon.png',
@@ -31,6 +30,7 @@ export type Marker = {
 };
 
 export default function Map({ markers }: { markers?: Marker[] }) {
+    console.log(markers)
     return (
         <MapContainer
             center={[0, 0]}
@@ -42,7 +42,7 @@ export default function Map({ markers }: { markers?: Marker[] }) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {markers?.map((marker) => {
-                return <Marker position={[marker.lat, marker.long]} icon={icon}>
+                return <Marker position={[marker.lat, marker.long] as LatLngTuple} icon={icon}>
                     {marker.popup ? <Popup>marker.popup</Popup> : ""}
                 </Marker>;
             })}

@@ -38,6 +38,16 @@ export type EducationalVideo = {
     videoId: string
 }
 
+export type LocationData = {
+    lat: number,
+    long: number
+}
+
+export type GreenSpace = {
+    name: string,
+    location: LocationData
+}
+
 export type ServerResponse<T> = {
     status: string,
     statusCode: number,
@@ -50,6 +60,7 @@ const SERVER_COMMUNITIES = "http://localhost:3001/communities"
 const SERVER_COMMUNITY_MEMBERS = "http://localhost:3001/community_members"
 const SERVER_NEWS = "http://localhost:3001/news"
 const SERVER_EDUCATIONAL_VIDEOS = "http://localhost:3001/educational_videos"
+const SERVER_GREEN_SPACES = "http://localhost:3001/green_spaces"
 
 function parseData<T>(data: T): T {
     if (Array.isArray(data)) {
@@ -145,6 +156,11 @@ export async function getEducationalVideo(id: IdType): Promise<ServerResponse<Ed
 export async function getEducationalVideoList(page?: number, limit?: number): Promise<ServerResponse<EducationalVideo[]>> {
     const url = new NextURL(SERVER_EDUCATIONAL_VIDEOS + `?_page=${page || DEFAULT_PAGE}&_limit=${limit || DEFAULT_LIMIT}`);
     return getSomething<EducationalVideo[]>(url);
+}
+
+export async function getGreenSpaces(): Promise<ServerResponse<GreenSpace[]>> {
+    const url = new NextURL(SERVER_GREEN_SPACES);
+    return getSomething<GreenSpace[]>(url);
 }
 
 export function isSuccess<T>(x: ServerResponse<T>): boolean {

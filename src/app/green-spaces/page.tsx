@@ -5,18 +5,24 @@ import { Input } from '@/components/ui/input';
 import { CheckCheck, PlusCircle } from 'lucide-react';
 import Link from 'next/link';
 import ContributeButton from './contribute-button';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: "Green Spaces near You",
-};
+import { getGreenSpaces, isSuccess } from '@/data/something_data_utils';
+import { Marker } from '@/components/map/map';
 
 export default async function Page() {
+    const response = await getGreenSpaces();
+
+    if (!isSuccess(response)) {
+        return <p>Unable to get green spaces.</p>
+    }
+    const greenSpaces = response.response;
+
+    console.log(greenSpaces?.map((x) => x.location as Marker));
+
     return (
         <article className="m-8 flex flex-row gap-2 h-full">
             <section className="p-2 flex flex-col gap-4 w-[80%]">
                 <h1 className="text-3xl">Green Spaces near You!</h1>
-                <MapCaller />
+                <MapCaller markers={greenSpaces?.map((x) => x.location as Marker)} />
                 <p>Any problems with the map? {" "}
                     <Link className="underline text-blue-500" href="https://www.openstreetmap.org/fixthemap" target="_blank">Report it.</Link>
                 </p>

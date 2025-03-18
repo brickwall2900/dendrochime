@@ -1,6 +1,7 @@
 "use client"
 import {
     useEffect,
+  useRef,
   useState
 } from "react"
 import {
@@ -94,64 +95,74 @@ export default function SignUpForm({ userType, files, onFilesChanged }: { userTy
         }
     }
 
+    function btnSubmitForm() {
+      form.handleSubmit(onSubmit)()
+    }
+
     return (
-        <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-2 max-w-3xl w-full mx-auto">
-            
-            <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-                <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                    <Input                 
-                    type=""
-                    {...field} />
-                </FormControl>
-                <FormDescription>This is your public display name.</FormDescription>
-                <FormMessage />
-                </FormItem>
-            )}
-            />
-            
-            <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-                <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                    <PasswordInput {...field} />
-                </FormControl>
-                <FormDescription>Enter your password.</FormDescription>
-                <FormMessage />
-                </FormItem>
-            )}
-            />
-            
-            {!isCitizen && <Link href="/expert_form.pdf" target="_blank" className="text-blue-500">Download Form</Link>}
-            {!isCitizen &&  <FormField
-                    control={form.control}
-                    name="file_upload"
-                    render={({ field: { value, onChange, ...fieldProps } }) => (
-                      <FormItem className="mt-4">
-                        <FormLabel>Upload your file</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="file"
-                            className="cursor-pointer"
-                            onChange={(e) => onChange(e.target.files)}
-                            {...fieldProps}
-                          />
-                        </FormControl>
-                        <FormDescription>Accepted file formats: PDF, JPG, PNG (max 5MB)</FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />}
-            <Button type="submit">Submit</Button>
-        </form>
-        </Form>
+      <div className="flex flex-col gap-2">
+          <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-2 max-w-3xl w-full mx-auto">
+              
+              <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                  <FormItem>
+                  <FormLabel>Username</FormLabel>
+                  <FormControl>
+                      <Input                 
+                      type=""
+                      {...field} />
+                  </FormControl>
+                  <FormDescription>This is your public display name.</FormDescription>
+                  <FormMessage />
+                  </FormItem>
+              )}
+              />
+              
+              <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                  <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                      <PasswordInput {...field} />
+                  </FormControl>
+                  <FormDescription>Enter your password.</FormDescription>
+                  <FormMessage />
+                  </FormItem>
+              )}
+              />
+              
+              {!isCitizen && <Link href="/expert_form.pdf" target="_blank" className="text-blue-500">Download Form</Link>}
+              {!isCitizen &&  <FormField
+                      control={form.control}
+                      name="file_upload"
+                      render={({ field: { value, onChange, ...fieldProps } }) => (
+                        <FormItem className="mt-4">
+                          <FormLabel>Upload your file</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="file"
+                              className="cursor-pointer"
+                              onChange={(e) => onChange(e.target.files)}
+                              {...fieldProps}
+                            />
+                          </FormControl>
+                          <FormDescription>Accepted file formats: PDF, JPG, PNG (max 5MB)</FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />}
+          </form>
+          </Form>
+          <div className="grid grid-cols-4 gap-2">
+            <Button className="col-span-2" onClick={btnSubmitForm}>Submit</Button>
+            <Button variant="outline" className="">G</Button>
+            <Button variant="outline" className="">?</Button>
+          </div>
+      </div>
     )
 }

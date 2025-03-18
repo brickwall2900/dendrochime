@@ -15,7 +15,7 @@ export default function SignUpBox() {
     return (
         <div className="flex min-h-svh w-full h-full items-center justify-center">
             <img src="/tree.jpg" alt="Trees" className="w-max h-max fixed object-cover -z-10" />
-            <Card className="md:w-2xl w-lg md:h-xl h-lg">
+            <Card className="md:w-3xl w-xl md:h-xl h-lg">
                 <CardHeader>
                     <CardTitle className="text-2xl">SIGN UP</CardTitle>
                     <CardDescription>Create your account here!</CardDescription>

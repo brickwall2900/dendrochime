@@ -89,5 +89,28 @@
             "description": "gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt ",
             "videoId": "ZbWIs6z3Thw"
         }
+    ],
+
+    "green_spaces": [
+        {
+            "name": "Quezon Memorial Circle",
+            "location": { "lat": 14.6514644, "long": 121.0492828 }
+        },
+        {
+            "name": "La Mesa Eco Park",
+            "location": { "lat": 14.712103, "long": 121.0754137 }
+        },
+        {
+            "name": "Damar Village Park",
+            "location": { "lat": 14.6454027, "long": 121.0009846 }
+        },
+        {
+            "name": "Project 6 Park",
+            "location": { "lat": 14.6629588, "long": 121.0406603 }
+        },
+        {
+            "name": "GSIS Village Playground",
+            "location": { "lat": 14.6723929, "long": 121.0287796 }
+        }
     ]
 }
