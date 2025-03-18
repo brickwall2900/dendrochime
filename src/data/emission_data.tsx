@@ -1,20 +1,20 @@
-export type FootprintId = string
+export type EmissionId = string
 
-export interface FootprintAction {
-  id: FootprintId
+export interface EmissionAction {
+  id: EmissionId
   internalName: string
   name: string
-  icon: React.ReactNode
+  icon: string
   co2?: number
 }
 
-export interface FootprintSection {
-  id: FootprintId
+export interface EmissionSection {
+  id: EmissionId
   name: string
-  actions: FootprintAction[]
+  actions: EmissionAction[]
 }
 
-export const footprint_data: FootprintSection[] = [
+export const emissionData: EmissionSection[] = [
   {
     id: "transport",
     name: "Transport",
@@ -91,11 +91,11 @@ export const footprint_data: FootprintSection[] = [
   },
 ]
 
-export function getSection(id: FootprintId): FootprintSection | undefined {
-    return footprint_data.find((section) => section.id === id)
+export function getSection(id: EmissionId): EmissionSection | undefined {
+    return emissionData.find((section) => section.id === id)
 }
   
-  export function getAction(sectionId: FootprintId, actionId: FootprintId): FootprintAction | undefined {
+  export function getAction(sectionId: EmissionId, actionId: EmissionId): EmissionAction | undefined {
     const section = getSection(sectionId)
     return section?.actions.find((action) => action.id === actionId)
 }  

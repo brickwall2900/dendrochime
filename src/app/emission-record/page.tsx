@@ -2,22 +2,22 @@
 
 import type React from "react"
 
-import { footprint_data, type FootprintAction, type FootprintId, type FootprintSection } from "@/data/footprint_data"
+import { emissionData, type EmissionAction, type EmissionId, type EmissionSection } from "@/data/emission_data"
 import { createContext, useContext, useMemo, useState } from "react"
 import { X } from "lucide-react"
 
 // Define a type for tracked emissions
 type TrackedEmission = {
-  sectionId: FootprintId
-  itemId: FootprintId
+  sectionId: EmissionId
+  itemId: EmissionId
   timestamp: Date
   id: string // unique id for each emission entry
 }
 
 type EmissionContext = {
-  addEmission: (section: FootprintId, item: FootprintId) => void
+  addEmission: (section: EmissionId, item: EmissionId) => void
   removeEmission: (emissionId: string) => void
-  getEmissionsForSection: (sectionId: FootprintId) => TrackedEmission[]
+  getEmissionsForSection: (sectionId: EmissionId) => TrackedEmission[]
   emissions: TrackedEmission[]
 }
 
@@ -32,7 +32,7 @@ function useEmission() {
   return context
 }
 
-function TrackerItem({ item, section }: { item: FootprintAction; section: FootprintSection }) {
+function TrackerItem({ item, section }: { item: EmissionAction; section: EmissionSection }) {
   const context = useEmission()
 
   function btnItemPress() {
@@ -47,7 +47,7 @@ function TrackerItem({ item, section }: { item: FootprintAction; section: Footpr
   )
 }
 
-function TrackerThing({ items, section }: { items: FootprintAction[]; section: FootprintSection }) {
+function TrackerThing({ items, section }: { items: EmissionAction[]; section: EmissionSection }) {
   return (
     <div className="grid gap-2 auto-rows-[4rem] grid-cols-[repeat(auto-fit,minmax(4rem,1fr))] justify-items-center overflow-clip">
       {items.map((x) => {
@@ -57,7 +57,7 @@ function TrackerThing({ items, section }: { items: FootprintAction[]; section: F
   )
 }
 
-function EmissionsList({ section }: { section: FootprintSection }) {
+function EmissionsList({ section }: { section: EmissionSection }) {
   const { getEmissionsForSection, removeEmission } = useEmission()
   const emissions = getEmissionsForSection(section.id)
 
@@ -71,7 +71,7 @@ function EmissionsList({ section }: { section: FootprintSection }) {
 
   // Group emissions by item id to show count
   const groupedEmissions = emissions.reduce<
-    Record<FootprintId, { count: number; action: FootprintAction | undefined; emissions: TrackedEmission[] }>
+    Record<EmissionId, { count: number; action: EmissionAction | undefined; emissions: TrackedEmission[] }>
   >((acc, emission) => {
     if (!acc[emission.itemId]) {
       const action = section.actions.find((a) => a.id === emission.itemId)
@@ -143,7 +143,7 @@ function Thingy({
   title: string
   icon?: React.ReactNode
   children?: React.ReactNode
-  section: FootprintSection
+  section: EmissionSection
 }) {
   return (
     <section className="rounded-md overflow-hidden">
@@ -162,7 +162,7 @@ export default function Page() {
   // Add state to track user's emissions
   const [emissions, setEmissions] = useState<TrackedEmission[]>([])
 
-  function addEmission(sectionId: FootprintId, itemId: FootprintId) {
+  function addEmission(sectionId: EmissionId, itemId: EmissionId) {
     const newEmission: TrackedEmission = {
       sectionId,
       itemId,
@@ -177,7 +177,7 @@ export default function Page() {
     setEmissions((prev) => prev.filter((emission) => emission.id !== emissionId))
   }
 
-  function getEmissionsForSection(sectionId: FootprintId): TrackedEmission[] {
+  function getEmissionsForSection(sectionId: EmissionId): TrackedEmission[] {
     return emissions.filter((emission) => emission.sectionId === sectionId)
   }
 
@@ -193,7 +193,7 @@ export default function Page() {
 
   const totalEmissions = emissions.reduce((total, emission) => {
     try {
-      const section = footprint_data.find((s) => s.id === emission.sectionId)
+      const section = emissionData.find((s) => s.id === emission.sectionId)
       if (!section) return total
 
       const action = section.actions.find((a) => a.id === emission.itemId)
@@ -214,7 +214,7 @@ export default function Page() {
             <p className="text-xs">From {emissions.length} recorded activities</p>
           </div>
         </div>
-        {footprint_data.map((x) => {
+        {emissionData.map((x) => {
           return (
             <Thingy title={x.name} key={x.name} section={x}>
               <TrackerThing items={x.actions} section={x} />
