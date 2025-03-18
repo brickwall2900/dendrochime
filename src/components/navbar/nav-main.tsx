@@ -73,7 +73,7 @@ export function MainWithSidebarNav({ children }: Readonly<{
     return <>
         <SidebarProvider className="overflow-x-hidden">
             <div className="flex min-h-screen min-w-screen flex-col">
-                <Navigation name="Dendrochime" />
+                <Navigation name="DendroChime" />
                 <main className="flex-1 pt-12 mb-12 md:pr-16 w-full">
                     {/* <div className="h-full w-full"> */}
                         {children}

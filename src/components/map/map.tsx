@@ -1,6 +1,6 @@
 "use client";
 
-// TODO: Dendrochime embeds Leaflet for the map prototype.
+// TODO: DendroChime embeds Leaflet for the map prototype.
 // If you want to use Google Maps instead, go ahead.
 
 import { useState } from 'react';
