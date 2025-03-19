@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db": "json-server --watch db.json --port 3001"
+    "db": "json-server db.json --snapshots ./.db_snapshots --port 3001"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",

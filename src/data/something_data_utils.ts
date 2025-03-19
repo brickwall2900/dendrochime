@@ -8,7 +8,7 @@ export interface User {
     id: IdType,
     name: number,
     type: UserType,
-    communities: [ IdType ]
+    communities: IdType[]
 }
 
 export interface Community {
@@ -20,7 +20,7 @@ export interface Community {
 
 export interface CommunityMembers {
     id: IdType,
-    members: [ IdType ]
+    members: IdType[]
 }
 
 export interface News {
@@ -53,6 +53,29 @@ export interface ServerResponse<T> {
     status: string,
     statusCode: number,
     response?: T
+}
+
+type IdSystem = {
+    users: number,
+    news: number,
+    communities: number,
+    educational_videos: number,
+    green_spaces: number
+}
+
+async function getId(): Promise<ServerResponse<IdSystem>> {
+    return await getSomething<IdSystem>(new NextURL(SERVER_ID));
+}
+
+async function updateId(id: IdSystem) {
+    return await postSomething<IdSystem>(new NextURL(SERVER_ID), id);
+}
+
+function forwardResponse<T, U>(from: ServerResponse<T>): ServerResponse<U> {
+    return {
+        status: from.status,
+        statusCode: from.statusCode
+    }
 }
 
 // TODO: SWITCH TO AN ACTUAL DATABASE IN PRODUCTION!!
@@ -188,7 +211,7 @@ export function isSuccess<T>(x: ServerResponse<T>): boolean {
     return 200 <= x.statusCode && x.statusCode < 300;
 }
 
-// let's code adding something to the database
+// POST
 
 export async function postSomething<T>(url: NextURL, something: T): Promise<ServerResponse<T>> {
     const response = await fetch(url, {
@@ -213,29 +236,6 @@ export async function postSomething<T>(url: NextURL, something: T): Promise<Serv
     };   
 }
 
-type IdSystem = {
-    users: number,
-    news: number,
-    communities: number,
-    educational_videos: number,
-    green_spaces: number
-}
-
-async function getId(): Promise<ServerResponse<IdSystem>> {
-    return await getSomething<IdSystem>(new NextURL(SERVER_ID));
-}
-
-async function updateId(id: IdSystem) {
-    return await postSomething<IdSystem>(new NextURL(SERVER_ID), id);
-}
-
-function forwardResponse<T, U>(from: ServerResponse<T>): ServerResponse<U> {
-    return {
-        status: from.status,
-        statusCode: from.statusCode
-    }
-}
-
 export async function createNews(news: News): Promise<ServerResponse<News>> {
     const url = new NextURL(SERVER_NEWS);
     // this code gets the ID
@@ -251,9 +251,45 @@ export async function createNews(news: News): Promise<ServerResponse<News>> {
     news.id = idSystem.news;
     updateId(idSystem);
 
+    const date = new Date();
+    news.dateCreated = date;
+    news.dateModified = date;
+
     // if all successful, go!
     return postSomething(url, news);
 }
+
+export async function createCommunity(community: Community): Promise<ServerResponse<Community>> {
+    const url = new NextURL(SERVER_COMMUNITIES);
+    // this code gets the ID
+    const idResponse = await getId();
+    if (!isSuccess(idResponse)) {
+        return forwardResponse<IdSystem, Community>(idResponse);
+    }
+
+    // this code assigns new ID to community object
+    const idSystem = idResponse.response;
+    if (!idSystem) { throw new Error("tf"); }
+    idSystem.communities += 1
+    community.id = idSystem.communities;
+    community.memberCount = 0;
+    updateId(idSystem);
+
+    // create new community member relationship
+    const communityMembers = {} as CommunityMembers;
+    communityMembers.members = [];
+    communityMembers.id = community.id;
+
+    const communityMembersUrl = new NextURL(SERVER_COMMUNITY_MEMBERS);
+    const response = await postSomething(communityMembersUrl, communityMembers);
+    if (!isSuccess(response)) {
+        return forwardResponse<CommunityMembers, Community>(response);
+    }
+
+    // if all successful, go!
+    return postSomething(url, community);
+}
+
 
 // PATCH
 export async function patchSomething<T>(url: NextURL, something: T): Promise<ServerResponse<T>> {
@@ -308,4 +344,15 @@ export async function deleteSomething<T>(url: NextURL): Promise<ServerResponse<T
 export async function deleteNews(id: IdType): Promise<ServerResponse<News>> {
     const url = new NextURL(SERVER_NEWS + "/" + encodeURIComponent(id));
     return deleteSomething<News>(url);
+}
+
+export async function deleteCommunity(id: IdType): Promise<ServerResponse<Community>> {
+    const url = new NextURL(SERVER_COMMUNITIES + "/" + encodeURIComponent(id));
+    const membersUrl = new NextURL(SERVER_COMMUNITY_MEMBERS + "/" + encodeURIComponent(id));
+    const response = await deleteSomething<CommunityMembers>(membersUrl);
+    if (!isSuccess(response)) {
+        return forwardResponse<CommunityMembers, Community>(response);
+    }
+
+    return deleteSomething<Community>(url);
 }

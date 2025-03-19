@@ -2,7 +2,7 @@
   "id": {
     "users": 3,
     "news": 8,
-    "communities": 2,
+    "communities": 5,
     "educational_videos": 3,
     "green_spaces": 15
   },
@@ -30,6 +30,26 @@
         1,
         2
       ]
+    }
+  ],
+  "communities": [
+    {
+      "id": 1,
+      "name": "Community 1",
+      "description": "An example community",
+      "memberCount": 2
+    },
+    {
+      "id": 2,
+      "name": "Community 2",
+      "description": "An example community",
+      "memberCount": 6
+    },
+    {
+      "name": "gyatt",
+      "description": "ass",
+      "id": 4,
+      "memberCount": 0
     }
   ],
   "news": [
@@ -98,20 +118,6 @@
       "id": 8
     }
   ],
-  "communities": [
-    {
-      "id": 1,
-      "name": "Community 1",
-      "description": "An example community",
-      "memberCount": 2
-    },
-    {
-      "id": 2,
-      "name": "Community 2",
-      "description": "An example community",
-      "memberCount": 6
-    }
-  ],
   "community_members": [
     {
       "id": 1,
@@ -130,6 +136,14 @@
         5,
         6
       ]
+    },
+    {
+      "members": [],
+      "id": 4
+    },
+    {
+      "members": [],
+      "id": 5
     }
   ],
   "educational_videos": [

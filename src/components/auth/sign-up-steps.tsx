@@ -72,9 +72,9 @@ export function FormUploadBox({ files, onFilesChanged }: { files: File[] | null,
 
 // TODO: replace by JSON??
 const description = new Map();
-description.set("citizen", "You are a citizen. You are able to do stuff");
-description.set("expert", "You are an expert. You are able to do more stuff");
-description.set("institution", "You are an institution. You are also able to do more stuff");
+description.set("citizen", "Welcome! You are a citizen. You can join discussions, share ideas, and make an impact.");
+description.set("expert", "Welcome! You are an expert. You can teach, guide, inspire, and lead the way!");
+description.set("institution", "Welcome! You are an institution. You can share your programs, govern activities, and build networks.");
 
 export type UserType = "citizen" | "expert" | "institution";
 

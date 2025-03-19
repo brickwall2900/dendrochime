@@ -6,9 +6,13 @@ export const NewsSchema = z.object({
     id: IdTypeSchema.optional(),
     title: z.string(),
     author: z.string(),
-    content: z.string(),
-    dateCreated: z.number(),
-    dateModified: z.number()
+    content: z.string()
+});
+
+export const CommunitySchema = z.object({
+    id: IdTypeSchema.optional(),
+    name: z.string(),
+    description: z.string(),
 });
 
 export const NewsPatchSchema = z.object({

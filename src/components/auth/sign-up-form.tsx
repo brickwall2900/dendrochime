@@ -156,13 +156,9 @@ export default function SignUpForm({ userType, files, onFilesChanged }: { userTy
                         </FormItem>
                       )}
                     />}
+              <Button className="col-span-2" onClick={btnSubmitForm}>Submit</Button>
           </form>
           </Form>
-          <div className="grid grid-cols-4 gap-2">
-            <Button className="col-span-2" onClick={btnSubmitForm}>Submit</Button>
-            <Button variant="outline" className="">G</Button>
-            <Button variant="outline" className="">?</Button>
-          </div>
       </div>
     )
 }
