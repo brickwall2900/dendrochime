@@ -1,7 +1,7 @@
 import { Footprints, NotepadText, Space, TentTree, Trees, Trophy } from "lucide-react";
 
 export const links = [
-    { href: "/home", name: "Home" },
+    { href: "/", name: "Home" },
     { href: "/dashboard", name: "Dashboard" },
 ];
 
