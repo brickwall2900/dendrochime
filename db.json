@@ -157,15 +157,15 @@
       "name": "Quezon Memorial Circle",
       "id": 1,
       "location": {
-        "lat": 14.6514644,
-        "long": 121.0492828
+        "lat": 14.6514720,
+        "long": 121.0493310
       }
     },
     {
       "name": "La Mesa Eco Park",
       "id": 2,
       "location": {
-        "lat": 14.712103,
+        "lat": 14.7121030,
         "long": 121.0754137
       }
     },
@@ -173,16 +173,16 @@
       "name": "Damar Village Park",
       "id": 3,
       "location": {
-        "lat": 14.6454027,
-        "long": 121.0009846
+        "lat": 14.6458344,
+        "long": 121.0027679
       }
     },
     {
       "name": "Project 6 Park",
       "id": 4,
       "location": {
-        "lat": 14.6629588,
-        "long": 121.0406603
+        "lat": 14.6632203,
+        "long": 121.0406713
       }
     },
     {
@@ -197,8 +197,8 @@
       "name": "Ninoy Aquino Parks & Wildlife Center",
       "id": 6,
       "location": {
-        "lat": 14.6506138,
-        "long": 121.0438488
+        "lat": 14.6522843,
+        "long": 121.0452625
       }
     },
     {
@@ -213,45 +213,37 @@
       "name": "Eastwood Central Plaza",
       "id": 8,
       "location": {
-        "lat": 14.6090605,
-        "long": 121.0806183
+        "lat": 14.6090017,
+        "long": 121.0806353
       }
     },
     {
-      "name": "Isadora Hills Park",
+      "name": "Isidora Hills Park",
       "id": 9,
       "location": {
-        "lat": 14.6841861,
-        "long": 121.0770667
-      }
-    },
-    {
-      "name": "Project 6 Park",
-      "id": 10,
-      "location": {
-        "lat": 14.6629588,
-        "long": 121.0406603
+        "lat": 14.6841772,
+        "long": 121.0768957
       }
     },
     {
       "name": "Sunken Garden",
-      "id": 11,
+      "id": 10,
       "location": {
-        "lat": 14.655023,
-        "long": 121.0722718
+        "lat": 14.6551849,
+        "long": 121.0718692
       }
     },
     {
       "name": "Remedios C. Samala Park",
-      "id": 12,
+      "id": 11,
       "location": {
-        "lat": 14.643098,
+        "lat": 14.6430980,
         "long": 121.0307351
       }
     },
     {
       "name": "Del Nacia 4 Park",
-      "id": 13,
+      "id": 12,
       "location": {
         "lat": 14.6901415,
         "long": 121.0434395
@@ -259,18 +251,290 @@
     },
     {
       "name": "Geronimo Park",
-      "id": 14,
+      "id": 13,
       "location": {
-        "lat": 14.697456,
+        "lat": 14.6974560,
         "long": 121.1103686
       }
     },
     {
       "name": "Filinvest Park",
-      "id": 15,
+      "id": 14,
       "location": {
         "lat": 14.6946648,
         "long": 121.1033582
+      }
+    },
+    {
+      "name": "Diamonon Park",
+      "id": 15,
+      "location": {
+        "lat": 14.6636649,
+        "long": 121.0251931
+      }
+    },
+    {
+      "name": "Hayaville Basketball Court",
+      "id": 16,
+      "location": {
+        "lat": 14.6696825,
+        "long": 121.0373149
+      }
+    },
+    {
+      "name": "Malaya Park",
+      "id": 17,
+      "location": {
+        "lat": 14.6325515,
+        "long": 120.9940954
+      }
+    },
+    {
+      "name": "N.S. Amoranto Park",
+      "id": 18,
+      "location": {
+        "lat": 14.6302998,
+        "long": 120.9955528
+      }
+    },
+    {
+      "name": "Commonwealth Heights Subdivision Park",
+      "id": 19,
+      "location": {
+        "lat": 14.7035655,
+        "long": 121.0864536
+      }
+    },
+    {
+      "name": "Filinvest 1 Park",
+      "id": 20,
+      "location": {
+        "lat": 14.6813681,
+        "long": 121.0949390
+      }
+    },
+    {
+      "name": "Filinvest 2 Park",
+      "id": 21,
+      "location": {
+        "lat": 14.6922813,
+        "long": 121.1042861
+      }
+    },
+    {
+      "name": "Serbisyong Bayan Park",
+      "id": 22,
+      "location": {
+        "lat": 14.6901502,
+        "long": 121.0954387
+      }
+    },
+    {
+      "name": "Acropolis Children's Park",
+      "id": 23,
+      "location": {
+        "lat": 14.6062361,
+        "long": 121.0763523
+      }
+    },
+    {
+      "name": "Camerino Park",
+      "id": 24,
+      "location": {
+        "lat": 14.6252639,
+        "long": 121.0688677
+      }
+    },
+    {
+      "name": "Daza Park",
+      "id": 25,
+      "location": {
+        "lat": 14.6018154,
+        "long": 121.0654100
+      }
+    },
+    {
+      "name": "Faura Back Forest",
+      "id": 26,
+      "location": {
+        "lat": 14.6389123,
+        "long": 121.0759652
+      }
+    },
+    {
+      "name": "Hachi Park",
+      "id": 27,
+      "location": {
+        "lat": 14.6024939,
+        "long": 121.0893860
+      }
+    },
+    {
+      "name": "Lover's Lane Forest",
+      "id": 28,
+      "location": {
+        "lat": 14.6397529,
+        "long": 121.0768304
+      }
+    },
+    {
+      "name": "Tabuena Park",
+      "id": 29,
+      "location": {
+        "lat": 14.5923672,
+        "long": 121.0642514
+      }
+    },
+    {
+      "name": "Zen Garden",
+      "id": 30,
+      "location": {
+        "lat": 14.6393502,
+        "long": 121.0780395
+      }
+    },
+    {
+      "name": "Arboretum Forest",
+      "id": 31,
+      "location": {
+        "lat": 14.6604704,
+        "long": 121.0514264
+      }
+    },
+    {
+      "name": "Bernardo Park",
+      "id": 32,
+      "location": {
+        "lat": 14.6287215,
+        "long": 121.0462524
+      }
+    },
+    {
+      "name": "Galas Park",
+      "id": 33,
+      "location": {
+        "lat": 14.6120549,
+        "long": 121.0092535
+      }
+    },
+    {
+      "name": "Magdalena Rolling Hills Park",
+      "id": 34,
+      "location": {
+        "lat": 14.6154990,
+        "long": 121.0240119
+      }
+    },
+    {
+      "name": "Pedal N Paddle",
+      "id": 35,
+      "location": {
+        "lat": 14.6524556,
+        "long": 121.0494440
+      }
+    },
+    {
+      "name": "U.P. - Washington Sycip Garden of Native Trees",
+      "id": 36,
+      "location": {
+        "lat": 14.6574207,
+        "long": 121.0666681
+      }
+    },
+    {
+      "name": "Cruzville Park",
+      "id": 37,
+      "location": {
+        "lat": 14.7336687,
+        "long": 121.0467228
+      }
+    },
+    {
+      "name": "Goodwill Homes II Park",
+      "id": 38,
+      "location": {
+        "lat": 14.6989583,
+        "long": 121.0273246
+      }
+    },
+    {
+      "name": "Jordan Heights Park",
+      "id": 39,
+      "location": {
+        "lat": 14.7252678,
+        "long": 121.0239922
+      }
+    },
+    {
+      "name": "NHV Park",
+      "id": 40,
+      "location": {
+        "lat": 14.7316909,
+        "long": 121.0520461
+      }
+    },
+    {
+      "name": "Rotary Park",
+      "id": 41,
+      "location": {
+        "lat": 14.7374807,
+        "long": 121.0516346
+      }
+    },
+    {
+      "name": "SSS Village Park",
+      "id": 42,
+      "location": {
+        "lat": 14.7054764,
+        "long": 121.0612461
+      }
+    },
+    {
+      "name": "BURGUNDY PARK",
+      "id": 43,
+      "location": {
+        "lat": 14.6818258,
+        "long": 121.0243879
+      }
+    },
+    {
+      "name": "Greenville Park",
+      "id": 44,
+      "location": {
+        "lat": 14.6874390,
+        "long": 121.0374071
+      }
+    },
+    {
+      "name": "Fern Village Park",
+      "id": 45,
+      "location": {
+        "lat": 14.6847775,
+        "long": 121.0591410
+      }
+    },
+    {
+      "name": "Homeland Park",
+      "id": 46,
+      "location": {
+        "lat": 14.7040746,
+        "long": 121.0534310
+      }
+    },
+    {
+      "name": "Ramer Park",
+      "id": 47,
+      "location": {
+        "lat": 14.6791075,
+        "long": 121.0310478
+      }
+    },
+    {
+      "name": "Rosalia Park",
+      "id": 48,
+      "location": {
+        "lat": 14.6792643,
+        "long": 121.0375357
       }
     }
   ]

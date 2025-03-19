@@ -1,4 +1,4 @@
-import { Footprints, NotepadText, Space, TentTree, Trees, Trophy } from "lucide-react";
+import { Footprints, NotepadText, TentTree, Trees, Trophy } from "lucide-react";
 
 export const links = [
     { href: "/", name: "Home" },

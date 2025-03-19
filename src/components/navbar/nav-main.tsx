@@ -100,7 +100,7 @@ function Navigation({ name }: { name: string }) {
             <span className="ml-auto" />
             <Search color="#FFFFFF" />
             <Input className="bg-white w-64" type="text" placeholder="Search..." />
-            <Button><Bell /></Button>
+            <Button className="rounded-full bg-black border-2 border-white text-white w-10 h-10"><Bell /></Button>
             <UserAccountButton />
             {isMobile && <SidebarTrigger><Sidebar /></SidebarTrigger>}
         </header>

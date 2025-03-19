@@ -16,12 +16,11 @@ export default async function Page() {
     }
     const greenSpaces = response.response;
 
-    console.log(greenSpaces?.map((x) => x.location as Marker));
-
     return (
         <article className="m-8 flex flex-row gap-2 h-full">
             <section className="p-2 flex flex-col gap-4 w-[80%]">
                 <h1 className="text-3xl">Green Spaces Near You!</h1>
+                <p>{greenSpaces?.length} markers loaded...</p>
                 <MapCaller markers={greenSpaces?.map((x) => x.location as Marker)} />
                 <p>Any problems with the map? {" "}
                     <Link className="underline text-blue-500" href="https://www.openstreetmap.org/fixthemap" target="_blank">Report it.</Link>
