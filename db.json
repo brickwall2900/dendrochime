@@ -1,159 +1,277 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Kevin",
-            "type": "admin",
-            "communities": []
-        },
-        { 
-            "id": 2,
-            "name": "Alice",
-            "type": "citizen",
-            "communities": [1, 2]
-        },
-        { 
-            "id": 3,
-            "name": "Bob",
-            "type": "citizen",
-            "communities": [1, 2]
-        }
-    ],
-
-    "news": [
-        {
-            "id": 1,
-            "title": "Something about trees",
-            "author": "Knixi",
-            "content": "Aaaaaa",
-            "dateCreated": 1190952000000,
-            "dateModified": 1207627200000
-        },
-        {
-            "id": 2,
-            "title": "Tree planting",
-            "author": "Marga",
-            "content": "Guys! I think it's time to plant more trees!",
-            "dateCreated": 1742046601000,
-            "dateModified": 1742046606000
-        },
-        {
-            "id": 3,
-            "title": "Long content ",
-            "author": "Jefferson",
-            "content": "thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing ",
-            "dateCreated": 1842046601000,
-            "dateModified": 1842046606000
-        }
-    ],
-
-    "communities": [
-        {
-            "id": 1,
-            "name": "Community 1",
-            "description": "An example community",
-            "memberCount": 2
-        },
-        {
-            "id": 2,
-            "name": "Community 2",
-            "description": "An example community",
-            "memberCount": 6
-        }
-    ],
-
-    "community_members": [
-        {
-            "id": "1",
-            "members": [1, 2]
-        },
-        {
-            "id": "2",
-            "members": [1, 2, 3, 4, 5, 6]
-        }
-    ],
-
-    "educational_videos": [
-        {
-            "id": 1,
-            "title": "Video Example Title",
-            "description": "Description here",
-            "videoId": "9MUDAr1PnlE"
-        },
-        {
-            "id": 2,
-            "title": "linga guli guli",
-            "description": "a",
-            "videoId": "ZbWIs6z3Thw"
-        },
-        {
-            "id": 3,
-            "title": "linga guli guli",
-            "description": "gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt ",
-            "videoId": "ZbWIs6z3Thw"
-        }
-    ],
-
-    "green_spaces": [
-        {
-            "name": "Quezon Memorial Circle",
-            "location": { "lat": 14.6514644, "long": 121.0492828 }
-        },
-        {
-            "name": "La Mesa Eco Park",
-            "location": { "lat": 14.712103, "long": 121.0754137 }
-        },
-        {
-            "name": "Damar Village Park",
-            "location": { "lat": 14.6454027, "long": 121.0009846 }
-        },
-        {
-            "name": "Project 6 Park",
-            "location": { "lat": 14.6629588, "long": 121.0406603 }
-        },
-        {
-            "name": "GSIS Village Playground",
-            "location": { "lat": 14.6723929, "long": 121.0287796 }
-        },
-        {
-            "name": "Ninoy Aquino Parks & Wildlife Center",
-            "location": { "lat": 14.6506138, "long": 121.0438488 }
-        },
-        {
-            "name": "Serra Monte Park",
-            "location": { "lat": 14.6852482, "long": 121.1113622 }
-        },
-        {
-            "name": "Eastwood Central Plaza",
-            "location": { "lat": 14.6090605, "long": 121.0806183 }
-        },
-        {
-            "name": "Isadora Hills Park",
-            "location": { "lat": 14.6841861, "long": 121.0770667 }
-        },
-        {
-            "name": "Project 6 Park",
-            "location": { "lat": 14.6629588, "long": 121.0406603 }
-        },
-        {
-            "name": "Sunken Garden",
-            "location": { "lat": 14.655023, "long": 121.0722718 }
-        },
-        {
-            "name": "Remedios C. Samala Park",
-            "location": { "lat": 14.643098, "long": 121.0307351 }
-        },
-        {
-            "name": "Del Nacia 4 Park",
-            "location": { "lat": 14.6901415, "long": 121.0434395 }
-        },
-        {
-            "name": "Geronimo Park",
-            "location": { "lat": 14.697456, "long": 121.1103686 }
-        },
-        {
-            "name": "Filinvest Park",
-            "location": { "lat": 14.6946648, "long": 121.1033582 }
-        }
-    ]
+  "id": {
+    "users": 3,
+    "news": 8,
+    "communities": 2,
+    "educational_videos": 3,
+    "green_spaces": 15
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Kevin",
+      "type": "admin",
+      "communities": []
+    },
+    {
+      "id": 2,
+      "name": "Alice",
+      "type": "citizen",
+      "communities": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bob",
+      "type": "citizen",
+      "communities": [
+        1,
+        2
+      ]
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Something about trees",
+      "author": "Knixi",
+      "content": "whoops!",
+      "dateCreated": 1190952000000,
+      "dateModified": 1207627200000
+    },
+    {
+      "id": 2,
+      "title": "Tree planting",
+      "author": "Marga",
+      "content": "Guys! I think it's time to plant more trees!",
+      "dateCreated": 1742046601000,
+      "dateModified": 1742046606000
+    },
+    {
+      "id": 3,
+      "title": "A lot of things",
+      "author": "Jefferson",
+      "content": "Now, it's just one thing!",
+      "dateCreated": 1842046601000,
+      "dateModified": 1742353141149
+    },
+    {
+      "id": 4,
+      "title": "New news",
+      "author": "Me",
+      "content": "Great news!",
+      "dateCreated": 2,
+      "dateModified": 1
+    },
+    {
+      "title": "New news",
+      "author": "Knixi",
+      "content": "content is here",
+      "dateCreated": 1742348533946,
+      "dateModified": 1742348533946,
+      "id": 5
+    },
+    {
+      "title": "New news",
+      "author": "Jefferson",
+      "content": "Excuberent",
+      "dateCreated": 1742348788974,
+      "dateModified": 1742348788974,
+      "id": 6
+    },
+    {
+      "title": "Promulgat",
+      "author": "Aubrey",
+      "content": "Promulgate",
+      "dateCreated": 68,
+      "dateModified": 69,
+      "id": 7
+    },
+    {
+      "title": "Yellow",
+      "author": "Elly",
+      "content": "YELLOW!!",
+      "dateCreated": 68,
+      "dateModified": 69,
+      "id": 8
+    }
+  ],
+  "communities": [
+    {
+      "id": 1,
+      "name": "Community 1",
+      "description": "An example community",
+      "memberCount": 2
+    },
+    {
+      "id": 2,
+      "name": "Community 2",
+      "description": "An example community",
+      "memberCount": 6
+    }
+  ],
+  "community_members": [
+    {
+      "id": 1,
+      "members": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "members": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "educational_videos": [
+    {
+      "id": 1,
+      "title": "Video Example Title",
+      "description": "Description here",
+      "videoId": "9MUDAr1PnlE"
+    },
+    {
+      "id": 2,
+      "title": "linga guli guli",
+      "description": "a",
+      "videoId": "ZbWIs6z3Thw"
+    },
+    {
+      "id": 3,
+      "title": "linga guli guli",
+      "description": "gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt gyatt ",
+      "videoId": "ZbWIs6z3Thw"
+    }
+  ],
+  "green_spaces": [
+    {
+      "name": "Quezon Memorial Circle",
+      "id": 1,
+      "location": {
+        "lat": 14.6514644,
+        "long": 121.0492828
+      }
+    },
+    {
+      "name": "La Mesa Eco Park",
+      "id": 2,
+      "location": {
+        "lat": 14.712103,
+        "long": 121.0754137
+      }
+    },
+    {
+      "name": "Damar Village Park",
+      "id": 3,
+      "location": {
+        "lat": 14.6454027,
+        "long": 121.0009846
+      }
+    },
+    {
+      "name": "Project 6 Park",
+      "id": 4,
+      "location": {
+        "lat": 14.6629588,
+        "long": 121.0406603
+      }
+    },
+    {
+      "name": "GSIS Village Playground",
+      "id": 5,
+      "location": {
+        "lat": 14.6723929,
+        "long": 121.0287796
+      }
+    },
+    {
+      "name": "Ninoy Aquino Parks & Wildlife Center",
+      "id": 6,
+      "location": {
+        "lat": 14.6506138,
+        "long": 121.0438488
+      }
+    },
+    {
+      "name": "Serra Monte Park",
+      "id": 7,
+      "location": {
+        "lat": 14.6852482,
+        "long": 121.1113622
+      }
+    },
+    {
+      "name": "Eastwood Central Plaza",
+      "id": 8,
+      "location": {
+        "lat": 14.6090605,
+        "long": 121.0806183
+      }
+    },
+    {
+      "name": "Isadora Hills Park",
+      "id": 9,
+      "location": {
+        "lat": 14.6841861,
+        "long": 121.0770667
+      }
+    },
+    {
+      "name": "Project 6 Park",
+      "id": 10,
+      "location": {
+        "lat": 14.6629588,
+        "long": 121.0406603
+      }
+    },
+    {
+      "name": "Sunken Garden",
+      "id": 11,
+      "location": {
+        "lat": 14.655023,
+        "long": 121.0722718
+      }
+    },
+    {
+      "name": "Remedios C. Samala Park",
+      "id": 12,
+      "location": {
+        "lat": 14.643098,
+        "long": 121.0307351
+      }
+    },
+    {
+      "name": "Del Nacia 4 Park",
+      "id": 13,
+      "location": {
+        "lat": 14.6901415,
+        "long": 121.0434395
+      }
+    },
+    {
+      "name": "Geronimo Park",
+      "id": 14,
+      "location": {
+        "lat": 14.697456,
+        "long": 121.1103686
+      }
+    },
+    {
+      "name": "Filinvest Park",
+      "id": 15,
+      "location": {
+        "lat": 14.6946648,
+        "long": 121.1033582
+      }
+    }
+  ]
 }

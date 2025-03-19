@@ -14,7 +14,7 @@ export function NewsPiece({ news, className }: { news: News, className?: string 
         <li className={cn("flex flex-col border p-4 border-gray-800 rounded-xl max-w-full", className)}>
             <div className="flex flex-row justify-between">
                 <Link className="text-xl hover:underline" href={`/news/${news.id}`}>{news.title}</Link>
-                <p className="text-sm">Modified <time dateTime={news.dateModified.toISOString()}>{news.dateModified.toLocaleString()}</time></p>
+                <p className="text-sm">Modified <time dateTime={news.dateModified.toString()}>{news.dateModified.toLocaleString()}</time></p>
             </div>
 
             <div className="flex flex-row">
@@ -36,7 +36,7 @@ export default async function Page() {
             <p>This is the newsroom :pp TIME TO MAKE SOME NEWS!!</p>
             <ul className="flex flex-col gap-4">
                 {isSuccess(response) ? 
-                    response.response?.map(x => <NewsPiece news={x} key={x.title}></NewsPiece>)
+                    response.response?.map(x => <NewsPiece news={x} key={x.id}></NewsPiece>)
                     : <li>Error fetching lastest news! {response.status}</li>}
             </ul>
         </article>

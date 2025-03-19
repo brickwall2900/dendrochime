@@ -21,8 +21,8 @@ function NewsPage({ news }: { news?: News }) {
         <div className="flex flex-col gap-2">
             <h1 className="text-4xl">{news.title}</h1>
             <h2 className="text-md">By: {news.author}</h2>
-            <p className="text-sm">Created at <time dateTime={news.dateCreated.toISOString()}>{news.dateCreated.toLocaleString()}</time></p>
-            <p className="text-sm">Modified at <time dateTime={news.dateModified.toISOString()}>{news.dateModified.toLocaleString()}</time></p>
+            <p className="text-sm">Created at <time dateTime={news.dateCreated.toString()}>{news.dateCreated.toLocaleString()}</time></p>
+            <p className="text-sm">Modified at <time dateTime={news.dateModified.toString()}>{news.dateModified.toLocaleString()}</time></p>
             <p>{news.content}</p>
         </div>
     );

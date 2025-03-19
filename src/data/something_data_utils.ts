@@ -4,58 +4,59 @@ import { NextURL } from "next/dist/server/web/next-url"
 export type UserType = "citizen" | "expert" | "institution" | "admin"
 export type IdType = number
 
-export type User = {
+export interface User {
     id: IdType,
     name: number,
     type: UserType,
     communities: [ IdType ]
 }
 
-export type Community = {
+export interface Community {
     id: IdType,
     name: string,
     description: string,
     memberCount: number
 }
 
-export type CommunityMembers = {
+export interface CommunityMembers {
     id: IdType,
     members: [ IdType ]
 }
 
-export type News = {
+export interface News {
     id: IdType,
     title: string,
     author: string,
     content: string,
-    dateCreated: Date,
-    dateModified: Date
+    dateCreated: Date | number,
+    dateModified: Date | number
 }
 
-export type EducationalVideo = {
+export interface EducationalVideo {
     id: IdType,
     title: string,
     description: string,
     videoId: string
 }
 
-export type LocationData = {
+export interface LocationData {
     lat: number,
     long: number
 }
 
-export type GreenSpace = {
+export interface GreenSpace {
     name: string,
     location: LocationData
 }
 
-export type ServerResponse<T> = {
+export interface ServerResponse<T> {
     status: string,
     statusCode: number,
     response?: T
 }
 
 // TODO: SWITCH TO AN ACTUAL DATABASE IN PRODUCTION!!
+const SERVER_ID = "http://localhost:3001/id"
 const SERVER_USERS = "http://localhost:3001/users"
 const SERVER_COMMUNITIES = "http://localhost:3001/communities"
 const SERVER_COMMUNITY_MEMBERS = "http://localhost:3001/community_members"
@@ -79,6 +80,25 @@ function parseData<T>(data: T): T {
                     }
                 }
                 return [key, parseData(value)];
+            })
+        ) as T;
+    }
+    return data;
+}
+
+function serializeData<T>(data: T): T {
+    if (Array.isArray(data)) {
+        return data.map(serializeData) as T;
+    } else if (typeof data === "object" && data !== null) {
+        return Object.fromEntries(
+            Object.entries(data).map(([key, value]) => {
+                // if (key === "id" && typeof value === "number") {
+                //     return [key, value.toString()];
+                // }
+                if (value instanceof Date) {
+                    return [key, value.getTime()];
+                }
+                return [key, serializeData(value)];
             })
         ) as T;
     }
@@ -166,4 +186,126 @@ export async function getGreenSpaces(): Promise<ServerResponse<GreenSpace[]>> {
 
 export function isSuccess<T>(x: ServerResponse<T>): boolean {
     return 200 <= x.statusCode && x.statusCode < 300;
+}
+
+// let's code adding something to the database
+
+export async function postSomething<T>(url: NextURL, something: T): Promise<ServerResponse<T>> {
+    const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(serializeData(something)),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    if (!response.ok) {
+        return {
+            status: response.statusText,
+            statusCode: response.status
+        }
+    }
+
+    return {
+        status: response.statusText,
+        statusCode: response.status,
+        response: something
+    };   
+}
+
+type IdSystem = {
+    users: number,
+    news: number,
+    communities: number,
+    educational_videos: number,
+    green_spaces: number
+}
+
+async function getId(): Promise<ServerResponse<IdSystem>> {
+    return await getSomething<IdSystem>(new NextURL(SERVER_ID));
+}
+
+async function updateId(id: IdSystem) {
+    return await postSomething<IdSystem>(new NextURL(SERVER_ID), id);
+}
+
+function forwardResponse<T, U>(from: ServerResponse<T>): ServerResponse<U> {
+    return {
+        status: from.status,
+        statusCode: from.statusCode
+    }
+}
+
+export async function createNews(news: News): Promise<ServerResponse<News>> {
+    const url = new NextURL(SERVER_NEWS);
+    // this code gets the ID
+    const idResponse = await getId();
+    if (!isSuccess(idResponse)) {
+        return forwardResponse<IdSystem, News>(idResponse);
+    }
+
+    // this code assigns new ID to news object
+    const idSystem = idResponse.response;
+    if (!idSystem) { throw new Error("tf"); }
+    idSystem.news += 1
+    news.id = idSystem.news;
+    updateId(idSystem);
+
+    // if all successful, go!
+    return postSomething(url, news);
+}
+
+// PATCH
+export async function patchSomething<T>(url: NextURL, something: T): Promise<ServerResponse<T>> {
+    const response = await fetch(url, {
+        method: "PATCH",
+        body: JSON.stringify(serializeData(something)),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    return {
+        status: response.statusText,
+        statusCode: response.status
+    }
+}
+
+// TODO: giving users unchecked permission if they could update the news or not...
+interface NewsPatch {
+    title?: string,
+    content?: string,
+    dateModified: number
+}
+
+export async function updateNews(
+    id: IdType,
+    title?: string | null,
+    content?: string | null): Promise<ServerResponse<News>> {
+
+    const url = new NextURL(SERVER_NEWS + "/" + encodeURIComponent(id));
+    const now = Date.now();
+    const updated = {} as NewsPatch
+    if (title) { updated.title = title; }
+    if (content) { updated.content = content; }
+    updated.dateModified = now;
+
+    return await patchSomething<News>(url, updated as News /* Trick TypeScript into thinking this is the correc type */ );
+}
+
+// DELETE
+export async function deleteSomething<T>(url: NextURL): Promise<ServerResponse<T>> {
+    const response = await fetch(url, {
+        method: "DELETE"
+    });
+
+    return {
+        status: response.statusText,
+        statusCode: response.status
+    }
+}
+
+export async function deleteNews(id: IdType): Promise<ServerResponse<News>> {
+    const url = new NextURL(SERVER_NEWS + "/" + encodeURIComponent(id));
+    return deleteSomething<News>(url);
 }

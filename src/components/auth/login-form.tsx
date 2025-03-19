@@ -33,6 +33,7 @@ import {
 import {
   PasswordInput
 } from "@/components/ui/password-input"
+import { createNews, News } from "@/data/something_data_utils"
 
 const formSchema = z.object({
   username: z.string().min(3).max(50),
@@ -49,8 +50,23 @@ export default function LoginForm() {
     }
   })
 
-  function onSubmit(values: z.infer < typeof formSchema > ) {
+  async function onSubmit(values: z.infer < typeof formSchema > ) {
     try {
+      const thing = await createNews({ 
+        title: "New news",
+        author: values.username,
+        content: values.password,
+        dateCreated: new Date(),
+        dateModified: new Date() 
+      } as News);
+      toast(
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(thing.response, null, 2)}</code>
+        </pre>
+      );
+      if (!thing.response) {
+        toast(<p>THING IS UNDEFINED!!!!</p>);
+      }
       console.log(values);
       toast(
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
