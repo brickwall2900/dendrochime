@@ -24,6 +24,7 @@
         {
             "id": 1,
             "title": "Something about trees",
+            "author": "Knixi",
             "content": "Aaaaaa",
             "dateCreated": 1190952000000,
             "dateModified": 1207627200000
@@ -31,6 +32,7 @@
         {
             "id": 2,
             "title": "Tree planting",
+            "author": "Marga",
             "content": "Guys! I think it's time to plant more trees!",
             "dateCreated": 1742046601000,
             "dateModified": 1742046606000
@@ -38,6 +40,7 @@
         {
             "id": 3,
             "title": "Long content ",
+            "author": "Jefferson",
             "content": "thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing thing ",
             "dateCreated": 1842046601000,
             "dateModified": 1842046606000
@@ -111,6 +114,46 @@
         {
             "name": "GSIS Village Playground",
             "location": { "lat": 14.6723929, "long": 121.0287796 }
+        },
+        {
+            "name": "Ninoy Aquino Parks & Wildlife Center",
+            "location": { "lat": 14.6506138, "long": 121.0438488 }
+        },
+        {
+            "name": "Serra Monte Park",
+            "location": { "lat": 14.6852482, "long": 121.1113622 }
+        },
+        {
+            "name": "Eastwood Central Plaza",
+            "location": { "lat": 14.6090605, "long": 121.0806183 }
+        },
+        {
+            "name": "Isadora Hills Park",
+            "location": { "lat": 14.6841861, "long": 121.0770667 }
+        },
+        {
+            "name": "Project 6 Park",
+            "location": { "lat": 14.6629588, "long": 121.0406603 }
+        },
+        {
+            "name": "Sunken Garden",
+            "location": { "lat": 14.655023, "long": 121.0722718 }
+        },
+        {
+            "name": "Remedios C. Samala Park",
+            "location": { "lat": 14.643098, "long": 121.0307351 }
+        },
+        {
+            "name": "Del Nacia 4 Park",
+            "location": { "lat": 14.6901415, "long": 121.0434395 }
+        },
+        {
+            "name": "Geronimo Park",
+            "location": { "lat": 14.697456, "long": 121.1103686 }
+        },
+        {
+            "name": "Filinvest Park",
+            "location": { "lat": 14.6946648, "long": 121.1033582 }
         }
     ]
 }

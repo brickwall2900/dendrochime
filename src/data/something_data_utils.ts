@@ -26,6 +26,7 @@ export type CommunityMembers = {
 export type News = {
     id: IdType,
     title: string,
+    author: string,
     content: string,
     dateCreated: Date,
     dateModified: Date
