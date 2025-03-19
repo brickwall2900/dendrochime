@@ -43,17 +43,10 @@ const formSchema = z.object({
   username: z.string().min(3).max(50),
   password: z.string().min(1),
   file_upload: z
-    .instanceof(FileList)
-    .optional()
-    .refine(
-        (files) => {
-        if (!files || files.length === 0) return true
-        return Array.from(files).every((file) => file.size <= 5 * 1024 * 1024) // 5MB limit
-        },
-        {
-        message: "File size should not exceed 5MB",
-        },
-    ),
+      .instanceof(File, { message: 'Please upload a file.' })
+      .refine((f) => f.size < 5 * 1024 * 1024, 'Max 5 MB upload size.')
+      .array()
+      .optional()
 });
 
 export default function SignUpForm({ userType, files, onFilesChanged }: { userType: UserType, files: File[] | null, onFilesChanged: any }) {
@@ -157,6 +150,13 @@ export default function SignUpForm({ userType, files, onFilesChanged }: { userTy
                       )}
                     />}
               <Button className="col-span-2" onClick={btnSubmitForm}>Submit</Button>
+
+              <div className="place-self-center mt-4 text-center text-sm">
+                  You already have an account?{" "}
+                  <Link href="/login" className="underline underline-offset-4">
+                      Log in!
+                  </Link>
+              </div>    
           </form>
           </Form>
       </div>

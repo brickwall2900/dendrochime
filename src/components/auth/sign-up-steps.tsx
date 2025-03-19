@@ -11,6 +11,7 @@ import { Paperclip } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import SignUpForm from "./sign-up-form";
+import Link from "next/link";
 
 function SignUpUserTypeStep({ userTypeChanged }: { userTypeChanged: any }) {
     function onValueChanged(value: string) {
@@ -83,17 +84,20 @@ export default function SignUpSomething() {
     const [ files, setFiles ] = useState<File[] | null>(null);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full h-full">
+        <article className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full h-full">
             {/* Left side - Sign up form */}
-            <div className="p-2 flex flex-col gap-4 justify-between">
+            <section className="p-2 flex flex-col gap-4 justify-between">
                 <SignUpUserTypeStep userTypeChanged={setUserType} />
                 <SignUpForm userType={userType} files={files} onFilesChanged={setFiles} />
-            </div>
+            </section>
 
             {/* Right side - Explanatory text */}
-            <div className="p-2 border-l border-gray-200">
-                <p className="text-center">{description.get(userType)}</p>
-            </div>
-        </div>
+            <section className="p-2 border-l border-gray-200 flex flex-col place-items-center px-12">
+                <p className="text-center text-xl my-auto">{description.get(userType)}</p>
+                <Link href="/login" className="underline underline-offset-4 text-sm">
+                    Other Sign-In Methods
+                </Link>
+            </section>
+        </article>
       )
 }

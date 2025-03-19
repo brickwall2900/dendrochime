@@ -23,14 +23,6 @@ export default function SignUpBox() {
                 <CardContent>
                     <SignUpSomething />
                 </CardContent>
-                <CardFooter className="flex flex-col">
-                    <div className="place-self-center mt-4 text-center text-sm">
-                        You already have an account?{" "}
-                        <Link href="/login" className="underline underline-offset-4">
-                            Log in!
-                        </Link>
-                    </div>    
-                </CardFooter>
             </Card>
         </div>
     );
