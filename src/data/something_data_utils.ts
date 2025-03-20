@@ -49,6 +49,14 @@ export interface GreenSpace {
     location: LocationData
 }
 
+export interface TreeSpecies {
+    species: string,
+    id: number,
+    biomass: number,
+    c_stock: number,
+    co2_stock: number
+}
+
 export interface ServerResponse<T> {
     status: string,
     statusCode: number,
@@ -86,6 +94,7 @@ const SERVER_COMMUNITY_MEMBERS = "http://localhost:3001/community_members"
 const SERVER_NEWS = "http://localhost:3001/news"
 const SERVER_EDUCATIONAL_VIDEOS = "http://localhost:3001/educational_videos"
 const SERVER_GREEN_SPACES = "http://localhost:3001/green_spaces"
+const SERVER_TREE_SPECIES = "http://localhost:3001/cseq_tree_species"
 
 function parseData<T>(data: T): T {
     if (Array.isArray(data)) {
@@ -207,8 +216,13 @@ export async function getGreenSpaces(): Promise<ServerResponse<GreenSpace[]>> {
     return getSomething<GreenSpace[]>(url);
 }
 
+export async function getTreeSpecies(query: string, page?: number, limit?: number): Promise<ServerResponse<TreeSpecies[]>> {
+    const url = new NextURL(SERVER_TREE_SPECIES + `?q=${query}&_page=${page || DEFAULT_PAGE}&_limit=${limit || DEFAULT_LIMIT}`);
+    return getSomething<TreeSpecies[]>(url);
+}
+
 export function isSuccess<T>(x: ServerResponse<T>): boolean {
-    return 200 <= x.statusCode && x.statusCode < 300;
+    return 200 <= x.statusCode && x.statusCode < 400;
 }
 
 // POST

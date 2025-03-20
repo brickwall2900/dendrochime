@@ -26,11 +26,10 @@ const icon = L.icon({
 });
 
 export type Marker = {
-    lat: number, long: number, popup?: string
+    lat: number, long: number, popup?: React.ReactNode
 };
 
 export default function Map({ markers }: { markers?: Marker[] }) {
-    console.log(markers)
     return (
         <MapContainer
             center={[0, 0]}

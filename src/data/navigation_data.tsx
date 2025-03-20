@@ -6,7 +6,7 @@ export const links = [
 ];
 
 export const sidebar_links = [
-    { href: "/emission-record", name: "Corbon Emission Record", icon: <Footprints /> },
+    { href: "/emission-record", name: "Carbon Emission Record", icon: <Footprints /> },
     { href: "/carbon-seq-data", name: "Carbon Sequestration and Tree smomething", icon: <Trees /> },
     { href: "/green-spaces", name: "Green Spaces around You", icon: <TentTree /> },
     { href: "#", name: "Add note", icon: <NotepadText /> },
