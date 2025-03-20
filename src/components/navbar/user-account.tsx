@@ -24,7 +24,7 @@ export function UserAccountButton() {
     
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger className="rounded-full bg-black border-2 border-white text-white p-2"><User /></DropdownMenuTrigger>
+            <DropdownMenuTrigger className="rounded-full bg-white border-2 border-black text-white p-2"><User color="black" /></DropdownMenuTrigger>
             <DropdownMenuContent className="z-69421">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />

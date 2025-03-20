@@ -1,13 +1,14 @@
 import AuthButtons from "@/components/auth/auth-buttons";
+import Logo from "@/components/logo";
 
 function TitlePage() {
     return (
-        <div className="flex flex-col items-center place-content-center h-svh">
-            <h1 className="justify-between text-4xl text-center">DendroChime</h1>
+        <article className="flex flex-col items-center place-content-center h-svh">
+            <Logo className="h-20" />
             <p>Ding in a Greener Tomorrow</p>
             <p>One record at a time</p>
             <AuthButtons />
-        </div>
+        </article>
     );
 }
 

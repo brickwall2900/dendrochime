@@ -10,6 +10,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { UserAccountButton } from "./user-account";
+import Logo from "../logo";
 
 function SidebarMobile() {
     const sidebar = useSidebar();
@@ -88,8 +89,8 @@ export function MainWithSidebarNav({ children }: Readonly<{
 function Navigation({ name }: { name: string }) {
     const isMobile = useIsMobile();
     return <>
-        <header className="fixed flex w-full h-12 top-0 z-69420 overflow-hidden bg-green-700 items-center justify-start place-content-center px-4 gap-4">
-            <span className="text-white">{name}</span>
+        <header className="fixed flex w-full h-12 top-0 z-69420 overflow-hidden bg-green-900 items-center justify-start place-content-center px-4 gap-4">
+            <Logo className="h-8" />
             {!isMobile && <nav>
                 {
                     links.map((x) => {
@@ -99,8 +100,10 @@ function Navigation({ name }: { name: string }) {
             </nav>}
             <span className="ml-auto" />
             <Search color="#FFFFFF" />
-            <Input className="bg-white w-64" type="text" placeholder="Search..." />
-            <Button className="rounded-full bg-black border-2 border-white text-white w-10 h-10"><Bell /></Button>
+            <form>
+                <Input className="bg-white w-64" type="text" placeholder="Search..." />
+            </form>
+            <Button className="rounded-full bg-transparent border-2 border-white text-white w-10 h-10"><Bell color="white" /></Button>
             <UserAccountButton />
             {isMobile && <SidebarTrigger><Sidebar /></SidebarTrigger>}
         </header>

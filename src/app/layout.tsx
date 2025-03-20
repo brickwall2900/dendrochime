@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     template: '%s | DendroChime',
     default: 'DendroChime',
   },
+  icons: {
+    icon: '/icon/favicon.png',
+  },
   description: "carbon stock monitoring go boom brrrrr",
 };
 
@@ -47,16 +50,6 @@ export default function RootLayout({
       <body>
         <Toaster />
         <MainWithSidebarNav>{children}</MainWithSidebarNav>
-        {/* <div>
-          The footer goes here!
-          <Alert>
-            <AlertTriangle className="h-4 w-4" />
-            <AlertTitle>DendroChime</AlertTitle>
-            <AlertDescription>
-              Website is not currently representative in its current state! Anything may be subject to change!
-            </AlertDescription>
-          </Alert>
-        </div> */}
       </body>
     </html>
   );
