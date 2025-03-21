@@ -3,8 +3,10 @@
 import type React from "react"
 
 import { emissionData, type EmissionAction, type EmissionId, type EmissionSection } from "@/data/emission_data"
-import { createContext, useContext, useMemo, useState } from "react"
-import { X } from "lucide-react"
+import { createContext, useContext, useEffect, useMemo, useState } from "react"
+import { Save, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 
 // Define a type for tracked emissions
 type TrackedEmission = {
@@ -97,7 +99,7 @@ function EmissionsList({ section }: { section: EmissionSection }) {
               <span>
                 {action?.name} × {count}
               </span>
-              <span className="text-green-100 text-sm">({(count * (action?.co2 || 0)).toFixed(1)} kg CO₂)</span>
+              <span className="text-green-100 text-sm">({(count * (action?.co2 || 0)).toFixed(1)} kg CO₂ E)</span>
             </div>
             <div>
               <button
@@ -127,7 +129,7 @@ function EmissionsList({ section }: { section: EmissionSection }) {
               return total + (action?.co2 || 0)
             }, 0)
             .toFixed(1)}{" "}
-          kg CO₂
+          kg CO₂ E
         </span>
       </div>
     </div>
@@ -156,6 +158,14 @@ function Thingy({
       </div>
     </section>
   )
+}
+
+function saveEmissionData(emission: TrackedEmission[]) {
+  window.localStorage.setItem("TrackedEmissions", JSON.stringify(emission));
+}
+
+function loadEmissionData(): TrackedEmission[] {
+  return JSON.parse(window.localStorage.getItem("TrackedEmissions") || "");
 }
 
 export default function Page() {
@@ -203,12 +213,20 @@ export default function Page() {
     }
   }, 0)
 
+  useEffect(() => {
+    setEmissions(loadEmissionData());
+  }, []);
+
+  useEffect(() => {
+    saveEmissionData(emissions);
+  }, [ emissions ]);
+
   return (
     <EmissionContext.Provider value={contextValue}>
       <title>Carbon Emission Record</title>
       <article className="m-8 flex flex-col gap-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h1 className="text-3xl">Carbon Emission Record!!!!</h1>
+          <h1 className="text-3xl">Carbon Emission Record!</h1>
           <div className="rounded bg-green-800 text-white p-3">
             <p className="text-lg font-bold">Total CO₂ E: {totalEmissions.toFixed(1)} kg</p>
             <p className="text-xs">From {emissions.length} recorded activities</p>

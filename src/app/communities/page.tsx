@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     title: "Communities",
 };
 
-export function CommunityThing( { community, className }: { community: Community, className?: string } ) {
+export function CommunityThing( { community, className, TODO }: { community: Community, className?: string, TODO?: boolean } ) {
     return (
         <li className={cn("flex flex-col w-full border p-4 border-gray-800 rounded-xl", className)}>
             <div className="flex flex-row justify-between">
                 <Link className="text-xl hover:underline" href={`/communities/${community.id}`}>{community.name}</Link>
-                <p className="text-sm">{community.memberCount} members</p>
+                <p className="text-sm">{community.memberCount} {!TODO ? "members" : "views"}</p>
             </div>
 
             <div className="flex flex-row">

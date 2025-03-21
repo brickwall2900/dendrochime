@@ -33,7 +33,6 @@ export default async function Page() {
                 <h1 className="text-3xl">Newsroom</h1>
                 <CreatePostButton />
             </div>
-            <p>This is the newsroom :pp TIME TO MAKE SOME NEWS!!</p>
             <ul className="flex flex-col gap-4">
                 {isSuccess(response) ? 
                     response.response?.map(x => <NewsPiece news={x} key={x.id}></NewsPiece>)

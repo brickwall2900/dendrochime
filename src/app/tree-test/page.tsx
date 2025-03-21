@@ -2,10 +2,21 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { getTreeSpecies, isSuccess, TreeSpecies } from "@/data/something_data_utils"
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+  } from "@/components/ui/pagination"
+import { getTreeSpecies, isSuccess, TreeSpecies } from "@/data/client_data_utils";
+  
 
 export function TreeThingItem({ species, className }: { species: TreeSpecies, className?: string }) {
     return (
@@ -29,10 +40,7 @@ export default function Page() {
 
     const buttonRef = useRef<HTMLButtonElement>(null);
 
-    async function onSearch(e: React.FormEvent) {
-        e.preventDefault();
-        if (!query.trim()) return;
-
+    async function doSomething() {
         const button = buttonRef.current;
         if (button) { button.disabled = true; }
         
@@ -49,6 +57,15 @@ export default function Page() {
         }
         if (button) { button.disabled = false; }
     }
+
+    async function onSearch(e: React.FormEvent) {
+        e.preventDefault();
+        doSomething();
+    }
+
+    useEffect(() => {
+        doSomething();
+    }, []);
 
     // For now, this only gives the top 10 results.
     // TODO: Add page controls!
@@ -72,5 +89,22 @@ export default function Page() {
                 results.map(x => <TreeThingItem species={x} key={x.id}></TreeThingItem>)
                 : <li>Error fetching tree species! {error}</li>}
         </ul>
+        <Pagination>
+            <PaginationContent>
+                <PaginationItem>
+                <PaginationPrevious href="#" />
+                </PaginationItem>
+                <PaginationItem>
+                <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                <PaginationEllipsis />
+                </PaginationItem>
+                <PaginationItem>
+                <PaginationNext href="#" />
+                </PaginationItem>
+            </PaginationContent>
+        </Pagination>
+
     </article>);
 }

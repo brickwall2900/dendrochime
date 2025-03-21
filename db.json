@@ -4,7 +4,8 @@
     "news": 8,
     "communities": 2,
     "educational_videos": 3,
-    "green_spaces": 15
+    "green_spaces": 54,
+    "cseq_tree_species": 22
   },
   "users": [
     {
@@ -157,15 +158,15 @@
       "name": "Quezon Memorial Circle",
       "id": 1,
       "location": {
-        "lat": 14.6514720,
-        "long": 121.0493310
+        "lat": 14.651472,
+        "long": 121.049331
       }
     },
     {
       "name": "La Mesa Eco Park",
       "id": 2,
       "location": {
-        "lat": 14.7121030,
+        "lat": 14.712103,
         "long": 121.0754137
       }
     },
@@ -237,7 +238,7 @@
       "name": "Remedios C. Samala Park",
       "id": 11,
       "location": {
-        "lat": 14.6430980,
+        "lat": 14.643098,
         "long": 121.0307351
       }
     },
@@ -253,7 +254,7 @@
       "name": "Geronimo Park",
       "id": 13,
       "location": {
-        "lat": 14.6974560,
+        "lat": 14.697456,
         "long": 121.1103686
       }
     },
@@ -310,7 +311,7 @@
       "id": 20,
       "location": {
         "lat": 14.6813681,
-        "long": 121.0949390
+        "long": 121.094939
       }
     },
     {
@@ -350,7 +351,7 @@
       "id": 25,
       "location": {
         "lat": 14.6018154,
-        "long": 121.0654100
+        "long": 121.06541
       }
     },
     {
@@ -366,7 +367,7 @@
       "id": 27,
       "location": {
         "lat": 14.6024939,
-        "long": 121.0893860
+        "long": 121.089386
       }
     },
     {
@@ -421,7 +422,7 @@
       "name": "Magdalena Rolling Hills Park",
       "id": 34,
       "location": {
-        "lat": 14.6154990,
+        "lat": 14.615499,
         "long": 121.0240119
       }
     },
@@ -430,7 +431,7 @@
       "id": 35,
       "location": {
         "lat": 14.6524556,
-        "long": 121.0494440
+        "long": 121.049444
       }
     },
     {
@@ -501,7 +502,7 @@
       "name": "Greenville Park",
       "id": 44,
       "location": {
-        "lat": 14.6874390,
+        "lat": 14.687439,
         "long": 121.0374071
       }
     },
@@ -510,7 +511,7 @@
       "id": 45,
       "location": {
         "lat": 14.6847775,
-        "long": 121.0591410
+        "long": 121.059141
       }
     },
     {
@@ -518,7 +519,7 @@
       "id": 46,
       "location": {
         "lat": 14.7040746,
-        "long": 121.0534310
+        "long": 121.053431
       }
     },
     {
@@ -536,21 +537,68 @@
         "lat": 14.6792643,
         "long": 121.0375357
       }
+    },
+    {
+      "location": {
+        "lat": -23.953663065370275,
+        "long": 136.31459048618842
+      },
+      "name": "Upside Down World",
+      "id": 49
+    },
+    {
+      "location": {
+        "lat": 63.8559494688413,
+        "long": 103.65657082759219
+      },
+      "name": "Russia",
+      "id": 50
+    },
+    {
+      "location": {
+        "lat": 18.645036092858316,
+        "long": 10.104709950406232
+      },
+      "name": "Somewhere in Africa",
+      "id": 51
+    },
+    {
+      "location": {
+        "lat": 42.28501426536736,
+        "long": 167.57051627470014
+      },
+      "name": "Middle of Nowhere",
+      "id": 52
+    },
+    {
+      "location": {
+        "lat": 39.09934039739738,
+        "long": 86.29747329428028
+      },
+      "name": "Somewhere in China",
+      "id": 53
+    },
+    {
+      "location": {
+        "lat": -0.19183332512265758,
+        "long": -3.9029077517060387
+      },
+      "name": "linga guli guli guli",
+      "id": 54
     }
   ],
-
   "cseq_tree_species": [
     {
       "species": "Acacia auriculiformis",
       "id": 1,
       "biomass": 11322.44,
-      "c_stock": 5095.10,
+      "c_stock": 5095.1,
       "co2_stock": 18699.02
     },
     {
       "species": "Anona squamosa",
       "id": 2,
-      "biomass": 23.00,
+      "biomass": 23,
       "c_stock": 10.74,
       "co2_stock": 39.39
     },
@@ -558,22 +606,22 @@
       "species": "Artocarpus heterophyllus",
       "id": 3,
       "biomass": 134.55,
-      "c_stock": 60.50,
+      "c_stock": 60.5,
       "co2_stock": 222.22
     },
     {
       "species": "Averrhoa bilimbi",
       "id": 4,
-      "biomass": 88.40,
+      "biomass": 88.4,
       "c_stock": 39.78,
-      "co2_stock": 146.00
+      "co2_stock": 146
     },
     {
       "species": "Azadirachta indica",
       "id": 5,
       "biomass": 75.86,
       "c_stock": 34.14,
-      "co2_stock": 125.20
+      "co2_stock": 125.2
     },
     {
       "species": "Bombax ceiba",
@@ -607,13 +655,13 @@
       "species": "Gmelina arborea",
       "id": 10,
       "biomass": 4267.55,
-      "c_stock": 1919.40,
+      "c_stock": 1919.4,
       "co2_stock": 7040.24
     },
     {
       "species": "Lagerstroemia speciosa",
       "id": 11,
-      "biomass": 1518.20,
+      "biomass": 1518.2,
       "c_stock": 682.89,
       "co2_stock": 2503.91
     },
@@ -634,7 +682,7 @@
     {
       "species": "Persea americana",
       "id": 14,
-      "biomass": 1325.60,
+      "biomass": 1325.6,
       "c_stock": 596.52,
       "co2_stock": 2189.08
     },
@@ -662,7 +710,7 @@
     {
       "species": "Sandoricum koetjape",
       "id": 18,
-      "biomass": 2109.50,
+      "biomass": 2109.5,
       "c_stock": 944.37,
       "co2_stock": 3464.08
     },
@@ -670,7 +718,7 @@
       "species": "Swietenia macrophylla",
       "id": 19,
       "biomass": 90317.99,
-      "c_stock": 40425.60,
+      "c_stock": 40425.6,
       "co2_stock": 148407.93
     },
     {
@@ -683,7 +731,7 @@
     {
       "species": "Tamarindus indica",
       "id": 21,
-      "biomass": 7534.20,
+      "biomass": 7534.2,
       "c_stock": 3374.39,
       "co2_stock": 12383.04
     },

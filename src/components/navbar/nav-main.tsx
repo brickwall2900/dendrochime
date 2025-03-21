@@ -49,7 +49,7 @@ function SidebarMain() {
     return <>
         <Sidebar side="right" variant="floating" collapsible="icon" className="border-l pt-12 z-1000 ">
             <SidebarContent>
-                {isMobile && <SidebarMobile />}
+                {<SidebarMobile />}
 
                 {sidebar_links.map((x) => {
                     return (
@@ -90,14 +90,14 @@ function Navigation({ name }: { name: string }) {
     const isMobile = useIsMobile();
     return <>
         <header className="fixed flex w-full h-12 top-0 z-69420 overflow-hidden bg-green-900 items-center justify-start place-content-center px-4 gap-4">
-            <Logo className="h-8" />
-            {!isMobile && <nav>
+            <Link href="/"><Logo className="h-8" /></Link>
+            {/* {!isMobile && <nav>
                 {
                     links.map((x) => {
                         return <Link key={x.name} className="text-white p-4 transition duration-100 hover:underline hover:bg-green-500" href={x.href}>{x.name}</Link>
                     })
                 }
-            </nav>}
+            </nav>} */}
             <span className="ml-auto" />
             <Search color="#FFFFFF" />
             <form>

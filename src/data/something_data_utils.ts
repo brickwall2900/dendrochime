@@ -46,7 +46,8 @@ export interface LocationData {
 
 export interface GreenSpace {
     name: string,
-    location: LocationData
+    location: LocationData,
+    id: number
 }
 
 export interface TreeSpecies {
@@ -63,7 +64,7 @@ export interface ServerResponse<T> {
     response?: T
 }
 
-type IdSystem = {
+export type IdSystem = {
     users: number,
     news: number,
     communities: number,
@@ -71,7 +72,7 @@ type IdSystem = {
     green_spaces: number
 }
 
-async function getId(): Promise<ServerResponse<IdSystem>> {
+export async function getId(): Promise<ServerResponse<IdSystem>> {
     return await getSomething<IdSystem>(new NextURL(SERVER_ID));
 }
 
@@ -271,6 +272,25 @@ export async function createNews(news: News): Promise<ServerResponse<News>> {
 
     // if all successful, go!
     return postSomething(url, news);
+}
+
+export async function addGreenSpace(greenSpace: GreenSpace): Promise<ServerResponse<GreenSpace>> {
+    const url = new NextURL(SERVER_GREEN_SPACES);
+    // this code gets the ID
+    const idResponse = await getId();
+    if (!isSuccess(idResponse)) {
+        return forwardResponse<IdSystem, GreenSpace>(idResponse);
+    }
+
+    // this code assigns new ID to news object
+    const idSystem = idResponse.response;
+    if (!idSystem) { throw new Error("tf"); }
+    idSystem.green_spaces += 1
+    greenSpace.id = idSystem.green_spaces;
+    updateId(idSystem);
+
+    // if all successful, go!
+    return postSomething(url, greenSpace);
 }
 
 export async function createCommunity(community: Community): Promise<ServerResponse<Community>> {

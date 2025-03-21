@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { Community, getCommunity, getPopularCommunities, isSuccess } from "@/data/something_data_utils";
+import { Group, Plus } from "lucide-react";
 
 export async function generateStaticParams() {
     const response = await getPopularCommunities();
@@ -19,9 +21,21 @@ function CommunityPage({ community }: { community?: Community }) {
 
     return (
         <div className="flex flex-col gap-1">
-            <h1 className="text-4xl">{community.name}</h1>
+            <div className="flex flex-col md:flex-row md:justify-between justify-start">
+                <h1 className="text-4xl">{community.name}</h1>
+                <Button><Plus /> Join</Button>
+            </div>
             <p>{community.description}</p>
             
+            <p>Members:</p>
+            <ul> { /* NO TIME TO IMPLEMENT TS */ }
+                <li>Alice</li>
+                <li>Bob</li>
+                <li>Marga</li>
+                <li>Jeff</li>
+                <li>Aubrey</li>
+                <li>Elly</li>
+            </ul>
         </div>
     );
 }

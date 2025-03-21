@@ -15,9 +15,6 @@ import Link from "next/link";
 
 function SignUpUserTypeStep({ userTypeChanged }: { userTypeChanged: any }) {
     function onValueChanged(value: string) {
-        toast.info(<pre>
-            You have chosen... {value}
-        </pre>);
         userTypeChanged(value);
     }
 

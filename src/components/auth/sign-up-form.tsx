@@ -69,11 +69,7 @@ export default function SignUpForm({ userType, files, onFilesChanged }: { userTy
     function onSubmit(values: z.infer < typeof formSchema > ) {
         try {
             if (!values.file_upload && !isCitizen) {
-                toast.error(
-                    <pre className="mt-2 w-full rounded-md bg-slate-950 p-4">
-                        You must upload a form!!!!!!!!
-                    </pre>
-                );
+                toast.error(<p>Form is required!</p>);
                 return;
             }
             console.log(values);

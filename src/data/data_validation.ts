@@ -15,6 +15,17 @@ export const CommunitySchema = z.object({
     description: z.string(),
 });
 
+export const LocationDataSchema = z.object({
+    lat: z.number(),
+    long: z.number()
+});
+
+export const GreenSpaceSchema = z.object({
+    id: IdTypeSchema.optional(),
+    name: z.string(),
+    location: LocationDataSchema,
+});
+
 export const NewsPatchSchema = z.object({
     title: z.string().optional(),
     content: z.string().optional(),

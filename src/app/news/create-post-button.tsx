@@ -18,10 +18,11 @@ export default function CreatePostButton() {
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                <DialogTitle>Are you absolutely sure?</DialogTitle>
+                <DialogTitle>TODO</DialogTitle>
                 <DialogDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
+                    Creating news requires a complex editing page like Word does.
+                    I plan to make this in Markdown to make things easy...
+                    For now, you can't create news yet :(
                 </DialogDescription>
                 </DialogHeader>
             </DialogContent>

@@ -3,6 +3,7 @@ import LatestNews from "./latest-news";
 import { Group, NewspaperIcon, Video } from "lucide-react";
 import TopCommunity from "./top-community";
 import { Metadata } from "next";
+import { CommunityThing } from "../communities/page";
 
 export const metadata: Metadata = {
     title: "Dashboard",
@@ -32,6 +33,8 @@ export default function Page() {
                 <TopCommunity />
             </Thingy>
             <Thingy title="Educational Videos" href="/educational" icon={<Video />}>
+                {/* bro does NOT have enough time to implement ts */}
+                <CommunityThing community={{name: "Environment video", description: "Very environmentalistic", memberCount: 30000, id: 69420}} className="bg-green-300" TODO />
             </Thingy>
         </div>
     );
