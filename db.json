@@ -592,155 +592,243 @@
       "species": "Acacia auriculiformis",
       "id": 1,
       "biomass": 11322.44,
-      "c_stock": 5095.1,
-      "co2_stock": 18699.02
+      "c_stock": 5095.10,
+      "co2_stock": 18699.02,
+      "scientific_name": "Acacia auriculiformis",
+      "common_names": ["Earleaf acacia"],
+      "family": "Fabaceae (Legume family)",
+      "native_location": "Australia, Papua New Guinea, Indonesia"
     },
     {
       "species": "Anona squamosa",
       "id": 2,
-      "biomass": 23,
+      "biomass": 23.00,
       "c_stock": 10.74,
-      "co2_stock": 39.39
+      "co2_stock": 39.39,
+      "scientific_name": "Annona squamosa",
+      "common_names": ["Sugar-apple", "Sweetsop"],
+      "family": "Annonaceae",
+      "native_location": "Tropical Americas, West Indies"
     },
     {
       "species": "Artocarpus heterophyllus",
       "id": 3,
       "biomass": 134.55,
-      "c_stock": 60.5,
-      "co2_stock": 222.22
+      "c_stock": 60.50,
+      "co2_stock": 222.22,
+      "scientific_name": "Artocarpus heterophyllus",
+      "common_names": ["Jackfruit"],
+      "family": "Moraceae",
+      "native_location": "South Asia, Southeast Asia"
     },
     {
       "species": "Averrhoa bilimbi",
       "id": 4,
-      "biomass": 88.4,
+      "biomass": 88.40,
       "c_stock": 39.78,
-      "co2_stock": 146
+      "co2_stock": 146.00,
+      "scientific_name": "Averrhoa bilimbi",
+      "common_names": ["Bilimbi", "Cucumber tree"],
+      "family": "Oxalidaceae",
+      "native_location": "Indonesia, Malaysia"
     },
     {
       "species": "Azadirachta indica",
       "id": 5,
       "biomass": 75.86,
       "c_stock": 34.14,
-      "co2_stock": 125.2
+      "co2_stock": 125.20,
+      "scientific_name": "Azadirachta indica",
+      "common_names": ["Neem"],
+      "family": "Meliaceae",
+      "native_location": "Indian subcontinent"
     },
     {
       "species": "Bombax ceiba",
       "id": 6,
       "biomass": 689.47,
       "c_stock": 310.26,
-      "co2_stock": 1138.62
+      "co2_stock": 1138.62,
+      "scientific_name": "Bombax ceiba",
+      "common_names": ["Silk cotton tree", "Kapok tree"],
+      "family": "Malvaceae",
+      "native_location": "Tropical Asia, Northern Australia"
     },
     {
       "species": "Delonix regia",
       "id": 7,
       "biomass": 19330.52,
       "c_stock": 8700.83,
-      "co2_stock": 31924.88
+      "co2_stock": 31924.88,
+      "scientific_name": "Delonix regia",
+      "common_names": ["Flame tree", "Royal poinciana"],
+      "family": "Fabaceae",
+      "native_location": "Madagascar"
     },
     {
       "species": "Dracontomelon dao",
       "id": 8,
       "biomass": 2934.59,
       "c_stock": 1320.57,
-      "co2_stock": 4840.78
+      "co2_stock": 4840.78,
+      "scientific_name": "Dracontomelon dao",
+      "common_names": ["Dao tree"],
+      "family": "Anacardiaceae",
+      "native_location": "Southeast Asia"
     },
     {
       "species": "Ficus benjamina",
       "id": 9,
       "biomass": 18205.36,
       "c_stock": 8184.75,
-      "co2_stock": 30040.91
+      "co2_stock": 30040.91,
+      "scientific_name": "Ficus benjamina",
+      "common_names": ["Weeping fig"],
+      "family": "Moraceae",
+      "native_location": "Southeast Asia, Australia"
     },
     {
       "species": "Gmelina arborea",
       "id": 10,
       "biomass": 4267.55,
-      "c_stock": 1919.4,
-      "co2_stock": 7040.24
+      "c_stock": 1919.40,
+      "co2_stock": 7040.24,
+      "scientific_name": "Gmelina arborea",
+      "common_names": ["Gmelina", "White teak"],
+      "family": "Lamiaceae",
+      "native_location": "India, Southeast Asia"
     },
     {
       "species": "Lagerstroemia speciosa",
       "id": 11,
-      "biomass": 1518.2,
+      "biomass": 1518.20,
       "c_stock": 682.89,
-      "co2_stock": 2503.91
+      "co2_stock": 2503.91,
+      "scientific_name": "Lagerstroemia speciosa",
+      "common_names": ["Pride of India", "Queen's crape myrtle"],
+      "family": "Lythraceae",
+      "native_location": "Southeast Asia, Indian subcontinent"
     },
     {
       "species": "Mangifera indica",
       "id": 12,
       "biomass": 59181.08,
       "c_stock": 26641.35,
-      "co2_stock": 97795.44
+      "co2_stock": 97795.44,
+      "scientific_name": "Mangifera indica",
+      "common_names": ["Mango"],
+      "family": "Anacardiaceae",
+      "native_location": "South Asia"
     },
     {
       "species": "Moringa oleifera",
       "id": 13,
       "biomass": 4.76,
       "c_stock": 2.14,
-      "co2_stock": 7.88
+      "co2_stock": 7.88,
+      "scientific_name": "Moringa oleifera",
+      "common_names": ["Drumstick tree", "Horseradish tree"],
+      "family": "Moringaceae",
+      "native_location": "Indian subcontinent"
     },
     {
       "species": "Persea americana",
       "id": 14,
-      "biomass": 1325.6,
+      "biomass": 1325.60,
       "c_stock": 596.52,
-      "co2_stock": 2189.08
+      "co2_stock": 2189.08,
+      "scientific_name": "Persea americana",
+      "common_names": ["Avocado"],
+      "family": "Lauraceae",
+      "native_location": "Mexico, Central America"
     },
     {
       "species": "Piliostigma malabaricum",
       "id": 15,
       "biomass": 2276.97,
       "c_stock": 1021.13,
-      "co2_stock": 3745.61
+      "co2_stock": 3745.61,
+      "scientific_name": "Piliostigma malabaricum",
+      "common_names": ["Purple bauhinia"],
+      "family": "Fabaceae",
+      "native_location": "India, Southeast Asia"
     },
     {
       "species": "Pterocarpus indicus",
       "id": 16,
       "biomass": 37152.53,
       "c_stock": 16618.64,
-      "co2_stock": 61000.14
+      "co2_stock": 61000.14,
+      "scientific_name": "Pterocarpus indicus",
+      "common_names": ["Narra", "Burmese Rosewood"],
+      "family": "Fabaceae (Legume family)",
+      "native_location": "Southeast Asia"
     },
     {
       "species": "Samanea saman",
       "id": 17,
       "biomass": 83493.84,
       "c_stock": 37372.23,
-      "co2_stock": 137234.37
+      "co2_stock": 137234.37,
+      "scientific_name": "Samanea saman",
+      "common_names": ["Rain tree"],
+      "family": "Fabaceae",
+      "native_location": "Central America, South America"
     },
     {
       "species": "Sandoricum koetjape",
       "id": 18,
-      "biomass": 2109.5,
+      "biomass": 2109.50,
       "c_stock": 944.37,
-      "co2_stock": 3464.08
+      "co2_stock": 3464.08,
+      "scientific_name": "Sandoricum koetjape",
+      "common_names": ["Santol"],
+      "family": "Meliaceae",
+      "native_location": "Southeast Asia"
     },
     {
       "species": "Swietenia macrophylla",
       "id": 19,
       "biomass": 90317.99,
-      "c_stock": 40425.6,
-      "co2_stock": 148407.93
+      "c_stock": 40425.60,
+      "co2_stock": 148407.93,
+      "scientific_name": "Swietenia macrophylla",
+      "common_names": ["Big-leaf mahogany"],
+      "family": "Meliaceae",
+      "native_location": "Central America, South America"
     },
     {
       "species": "Syzygium cumini",
       "id": 20,
       "biomass": 3215.69,
       "c_stock": 1439.58,
-      "co2_stock": 5283.97
+      "co2_stock": 5283.97,
+      "scientific_name": "Syzygium cumini",
+      "common_names": ["Java plum", "Jamun"],
+      "family": "Myrtaceae",
+      "native_location": "India, Southeast Asia"
     },
     {
       "species": "Tamarindus indica",
       "id": 21,
-      "biomass": 7534.2,
+      "biomass": 7534.20,
       "c_stock": 3374.39,
-      "co2_stock": 12383.04
+      "co2_stock": 12383.04,
+      "scientific_name": "Tamarindus indica",
+      "common_names": ["Tamarind"],
+      "family": "Fabaceae",
+      "native_location": "Africa, South Asia"
     },
     {
       "species": "Terminalia catappa",
       "id": 22,
       "biomass": 105.42,
       "c_stock": 47.44,
-      "co2_stock": 186.74
+      "co2_stock": 186.74,
+      "scientific_name": "Terminalia catappa",
+      "common_names": ["Indian almond"],
+      "family": "Combretaceae",
+      "native_location": "Tropical Asia, Pacific"
     }
-  ]
+  ]  
 }

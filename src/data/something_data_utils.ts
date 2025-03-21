@@ -55,7 +55,11 @@ export interface TreeSpecies {
     id: number,
     biomass: number,
     c_stock: number,
-    co2_stock: number
+    co2_stock: number,
+    scientific_name: string,
+    common_names: string[],
+    family: string,
+    native_location: string
 }
 
 export interface ServerResponse<T> {
