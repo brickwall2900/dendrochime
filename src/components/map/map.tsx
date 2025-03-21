@@ -3,7 +3,7 @@
 // TODO: DendroChime embeds Leaflet for the map prototype.
 // If you want to use Google Maps instead, go ahead.
 
-import { useState } from 'react';
+import React, { useImperativeHandle, useState } from 'react';
 
 // IMPORTANT: the order matters!
 import "leaflet/dist/leaflet.css";
@@ -14,7 +14,7 @@ import "leaflet/dist/leaflet.css";
 // yehey
 
 import L, { LatLng, LatLngBounds, LatLngBoundsExpression, LatLngTuple } from 'leaflet';
-import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 
 const icon = L.icon({ 
     iconUrl: '/images/marker-icon.png',
@@ -34,6 +34,15 @@ const iconChoose = L.icon({
       shadowSize:  [41, 41]
 });
 
+const iconLocated = L.icon({ 
+    iconUrl: '/images/marker-icon-locate.png',
+    iconSize:    [25, 41],
+      iconAnchor:  [12, 41],
+      popupAnchor: [1, -34],
+      tooltipAnchor: [16, -28],
+      shadowSize:  [41, 41]
+});
+
 export type Location = {
     lat: number, long: number
 }
@@ -43,6 +52,7 @@ export type Marker = {
 
 function LocationOnClick({ onMapClicked }: { onMapClicked?: (where: Location) => void }) {
     const [position, setPosition] = useState<LatLng | null>(null);
+    const [locatePosition, setLocatePosition] = useState<LatLng | null>(null);
     const map = useMapEvents({
         click(e) {
             const latlng = e.latlng.wrap();
@@ -52,25 +62,42 @@ function LocationOnClick({ onMapClicked }: { onMapClicked?: (where: Location) =>
                 onMapClicked(x);
             }
         },
+        locationfound(e) {
+            setLocatePosition(e.latlng);
+            map.flyTo(e.latlng, map.getZoom());
+        }
     });
 
-    return position === null ? null : (
-        <Marker position={position} icon={iconChoose}>
-            <Popup>
-                <div>
-                    <p>Selected Location: {position.lat}, {position.lng}</p>
-                </div>
-            </Popup>
-        </Marker>
-    )
+    return <>
+        {position === null ? null : (
+            <Marker position={position} icon={iconChoose}>
+                <Popup>
+                    <div>
+                        <p>Selected Location: {position.lat}, {position.lng}</p>
+                    </div>
+                </Popup>
+            </Marker>
+        )}
+
+        {locatePosition === null ? null : (
+            <Marker position={locatePosition} icon={iconChoose}>
+                <Popup>
+                    <div>
+                        <p>Device Location: {locatePosition.lat}, {locatePosition.lng}</p>
+                    </div>
+                </Popup>
+            </Marker>
+        )}
+    </>
 }
 
-export default function Map({ markers, onMapClicked }: { markers?: Marker[], onMapClicked?: (where: Location) => void }) {
+export default function Map({ markers, onMapClicked, ref }: { markers?: Marker[], onMapClicked?: (where: Location) => void, ref?: any }) {
     return (
         <MapContainer
             center={[0, 0]}
             zoom={11}
             scrollWheelZoom
+            ref={ref}
             
             className="h-full w-full">
             <TileLayer
@@ -78,6 +105,7 @@ export default function Map({ markers, onMapClicked }: { markers?: Marker[], onM
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {onMapClicked && <LocationOnClick onMapClicked={onMapClicked} />}
+
             {markers?.map((marker) => {
                 return <Marker position={[marker.lat, marker.long] as LatLngTuple} key={marker.id} icon={icon}>
                     {marker.popup ? <Popup>{marker.popup}</Popup> : ""}

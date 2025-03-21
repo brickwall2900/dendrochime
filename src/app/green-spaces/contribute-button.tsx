@@ -63,7 +63,10 @@ export default function ContributeButton({ position, onContribute }: { position?
                     they will decide if it gets approved or rejected.
                 </DialogDescription>
                 </DialogHeader>
-                <Input type="text" value={parkName} onChange={(e) => setParkName(e.target.value)} />
+                <div className="flex flex-col gap-1">
+                    <p className="text-sm">Name:</p>
+                    <Input type="text" value={parkName} placeholder="The Park!!" onChange={(e) => setParkName(e.target.value)} />
+                </div>
                 <DialogFooter>
                     <Button type="button" onClick={doContribute}>Contribute!</Button>
                     <DialogClose asChild>

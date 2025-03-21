@@ -72,7 +72,7 @@ export default function Page() {
 
     return (<article className="m-8 flex flex-col gap-4">
         <div className="flex flex-col md:flex-row md:justify-between justify-start">
-            <h1 className="text-3xl">Tree Species Search</h1>
+            <h1 className="text-4xl font-bold">Tree Species Search</h1>
             <form onSubmit={onSearch} className="flex gap-2">
                 <Input
                 type="text"

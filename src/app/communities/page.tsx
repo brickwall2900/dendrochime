@@ -30,7 +30,7 @@ export default async function Page() {
     return (
         <article className="m-8 flex flex-col gap-4">
             <div className="flex flex-col md:flex-row md:justify-between justify-start">
-                <h1 className="text-3xl">Communities</h1>
+                <h1 className="text-4xl font-bold">Communities</h1>
             </div>
             <p>This is the communities... JOIN ONE!!</p>
             <ul className="flex flex-col gap-4">

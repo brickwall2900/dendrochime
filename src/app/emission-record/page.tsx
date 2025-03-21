@@ -4,7 +4,7 @@ import type React from "react"
 
 import { emissionData, type EmissionAction, type EmissionId, type EmissionSection } from "@/data/emission_data"
 import { createContext, useContext, useEffect, useMemo, useState } from "react"
-import { Save, X } from "lucide-react"
+import { Save, SaveAll, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 
@@ -162,6 +162,7 @@ function Thingy({
 
 function saveEmissionData(emission: TrackedEmission[]) {
   window.localStorage.setItem("TrackedEmissions", JSON.stringify(emission));
+  toast.info(<p>Saved carbon emissions!</p>);
 }
 
 function loadEmissionData(): TrackedEmission[] {
@@ -217,21 +218,18 @@ export default function Page() {
     setEmissions(loadEmissionData());
   }, []);
 
-  useEffect(() => {
-    saveEmissionData(emissions);
-  }, [ emissions ]);
-
   return (
     <EmissionContext.Provider value={contextValue}>
       <title>Carbon Emission Record</title>
       <article className="m-8 flex flex-col gap-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h1 className="text-3xl">Carbon Emission Record!</h1>
+          <h1 className="text-4xl font-bold">Carbon Emission Record!</h1>
           <div className="rounded bg-green-800 text-white p-3">
             <p className="text-lg font-bold">Total CO₂ E: {totalEmissions.toFixed(1)} kg</p>
             <p className="text-xs">From {emissions.length} recorded activities</p>
           </div>
         </div>
+        <Button onClick={(x) => saveEmissionData(emissions)} variant="secondary"><SaveAll /> Save!</Button>
         {emissionData.map((x) => {
           return (
             <Thingy title={x.name} key={x.name} section={x}>

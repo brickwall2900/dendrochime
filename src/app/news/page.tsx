@@ -30,7 +30,7 @@ export default async function Page() {
     return (
         <article className="m-8 flex flex-col gap-4">
             <div className="flex flex-col md:flex-row md:justify-between justify-start">
-                <h1 className="text-3xl">Newsroom</h1>
+                <h1 className="text-4xl font-bold">Newsroom</h1>
                 <CreatePostButton />
             </div>
             <ul className="flex flex-col gap-4">

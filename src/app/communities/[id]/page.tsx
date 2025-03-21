@@ -22,7 +22,7 @@ function CommunityPage({ community }: { community?: Community }) {
     return (
         <div className="flex flex-col gap-1">
             <div className="flex flex-col md:flex-row md:justify-between justify-start">
-                <h1 className="text-4xl">{community.name}</h1>
+                <h1 className="text-4xl font-bold">{community.name}</h1>
                 <Button><Plus /> Join</Button>
             </div>
             <p>{community.description}</p>

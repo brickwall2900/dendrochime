@@ -23,7 +23,7 @@ function Thingy({ title, href, icon, children }: { title: string, href?: string,
 export default function Page() {
     return (
         <div className="m-8 flex flex-col gap-4">
-            <h1 className="text-3xl">Dashboard!</h1>
+            <h1 className="text-4xl font-bold">Dashboard</h1>
             <p>Welcome to DendroChime!</p>
 
             <Thingy title="Newsroom" href="/news" icon={<NewspaperIcon />}>
@@ -34,7 +34,7 @@ export default function Page() {
             </Thingy>
             <Thingy title="Educational Videos" href="/educational" icon={<Video />}>
                 {/* bro does NOT have enough time to implement ts */}
-                <CommunityThing community={{name: "Environment video", description: "Very environmentalistic", memberCount: 30000, id: 69420}} className="bg-green-300" TODO />
+                <CommunityThing community={{name: "Environment video", description: "Very environmentalistatic", memberCount: 30000, id: 69420}} className="bg-green-300" TODO />
             </Thingy>
         </div>
     );
