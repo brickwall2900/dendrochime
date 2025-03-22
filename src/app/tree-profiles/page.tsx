@@ -72,7 +72,7 @@ export default function Page() {
             <div className="flex flex-row">
                 <div className="flex flex-row items-center gap-2 mr-auto px-auto">
                     <TreePine />
-                    <h1 className="text-4xl text-left font-bold">Carbon Sequestration and Tree Accounting</h1>
+                    <h1 className="text-4xl text-left font-bold">Tree Profiles</h1>
                 </div>
                 <form onSubmit={onSearch} className="flex gap-2">
                     <Input

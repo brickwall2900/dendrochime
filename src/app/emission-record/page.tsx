@@ -171,7 +171,8 @@ function loadEmissionData(): TrackedEmission[] {
 
 export default function Page() {
   // Add state to track user's emissions
-  const [emissions, setEmissions] = useState<TrackedEmission[]>([])
+  const [ emissions, setEmissions ] = useState<TrackedEmission[]>([])
+  const [ changed, setChanged ] = useState(false);
 
   function addEmission(sectionId: EmissionId, itemId: EmissionId) {
     const newEmission: TrackedEmission = {
@@ -181,10 +182,12 @@ export default function Page() {
       id: `emission-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
     }
 
+    setChanged(true);
     setEmissions((prev) => [...prev, newEmission])
   }
 
   function removeEmission(emissionId: string) {
+    setChanged(true);
     setEmissions((prev) => prev.filter((emission) => emission.id !== emissionId))
   }
 
@@ -229,7 +232,10 @@ export default function Page() {
             <p className="text-xs">From {emissions.length} recorded activities</p>
           </div>
         </div>
-        <Button onClick={(x) => saveEmissionData(emissions)} variant="secondary"><SaveAll /> Save!</Button>
+        <Button onClick={(x) => {
+          setChanged(false);
+          saveEmissionData(emissions);
+        }} variant={changed ? "default" : "secondary"}><SaveAll /> Save!</Button>
         {emissionData.map((x) => {
           return (
             <Thingy title={x.name} key={x.name} section={x}>

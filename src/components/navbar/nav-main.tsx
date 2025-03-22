@@ -11,6 +11,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { UserAccountButton } from "./user-account";
 import Logo from "../logo";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 
 function SidebarMobile() {
     const sidebar = useSidebar();
